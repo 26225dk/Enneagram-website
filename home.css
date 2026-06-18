@@ -55,15 +55,16 @@ body {
   background-color: white;
   color: black;
   transform: translateY(-2px);
-}
-
-.topnav .nav-links a.active {
-  background-color: black;
-  color: white;
   text-decoration: underline;
 }
 
-.topnav .nav-links a.active:hover {
+.topnav .nav-links {
+  background-color: black;
+  color: white;
+  
+}
+
+.topnav .nav-links :hover {
   background-color: black;
   color: white;
   transform: none;
@@ -72,6 +73,9 @@ body {
 
 .enneagram-logo {
   width: 6%;
+  position: relative;
+  bottom: 10%;
+  right: 0.6%;
 }
 
 .enneagram-logo img {
@@ -93,6 +97,7 @@ body {
   flex-direction: column;
   justify-content: space-around;
   width: 100%;
+  
 }
 
 .white-q {
@@ -182,51 +187,60 @@ body {
 }
 
 .answer-btn.strongly-disagree {
-  width: 80px;
-  height: 80px;
+  width: 100px;
+  height: 100px;
   background-color: #8B0000;
 }
 
 .answer-btn.disagree {
-  width: 72px;
-  height: 72px;
-  background-color: #D64545;
+  width: 80px;
+  height: 80px;
+  background-color: #c83b3b;
 }
 
 .answer-btn.slightly-disagree {
-  width: 64px;
-  height: 64px;
-  background-color: #E8A0A0;
+  width: 65px;
+  height: 65px;
+  background-color: #eb7979;
 }
 
 .answer-btn.neutral {
   width: 50px;
   height: 50px;
-  background-color: #d8d8d8;
+  background-color: #d5d5d5;
   color: white;
 }
 
 .answer-btn.slightly-agree {
-  width: 64px;
-  height: 64px;
+  width: 65px;
+  height: 65px;
   background-color: #A0E8A0;
 }
 
 .answer-btn.agree {
-  width: 72px;
-  height: 72px;
-  background-color: #45D645;
+  width: 80px;
+  height: 80px;
+  background-color: #3fbf3f;
 }
 
 .answer-btn.strongly-agree {
-  width: 80px;
-  height: 80px;
+  width: 100px;
+  height: 100px;
   background-color: #008B00;
 }
 
+.disagree-txt {
+font-size: 25px;
+}
+
+.agree-txt {
+font-size: 25px;
+}
+
+
 .back-btn {
   background-color: black;
-  padding: 8px 30px;
+  padding: 1% 2%;
   border-radius: 100px;
   position: absolute;
   bottom: 15px;
@@ -238,12 +252,12 @@ body {
 .back-txt {
   color: white;
   margin: 0;
-  font-size: 12px;
+  font-size: 25px;
 }
 
 .next-btn {
   background-color: black;
-  padding: 8px 30px;
+  padding: 1% 2%;
   border-radius: 100px;
   position: absolute;
   bottom: 15px;
@@ -255,7 +269,7 @@ body {
 .next-txt {
   color: white;
   margin: 0;
-  font-size: 12px;
+  font-size: 25px;
 }
 
 /* Style the search box inside the navigation bar */
@@ -266,4 +280,12 @@ body {
   margin-top: 8px;
   margin-right: 16px;
   font-size: 17px;
+}
+
+
+
+/* to accommodate for mobile users */
+@media (max-width:1000px) {
+
+
 }
