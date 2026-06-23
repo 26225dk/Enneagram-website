@@ -9,6 +9,7 @@ html {
   box-sizing: inherit;
 }
 
+/* the body doesn't have a background color because the border is the main design element, and the content is contained within the beige background div. */
 body {
   border: 1vw solid #750504;
   margin: 0;
@@ -20,26 +21,31 @@ body {
 }
 
 .nav-header {
+  position: relative;
   display: flex;
   align-items: center;
-  gap: 1.5%;
-  padding: 0.8%;
+  gap: 0;
+  padding: 0;
   width: 100%;
 }
 
+/* my navigation bar */
 .topnav {
-  flex: 1;
-  min-width: 60%;
+  width: 100%;
   background-color: #000000;
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 0.8% 2%;
-  border-radius: 1%;
+  padding: 0.3% 5% 0.5% 9rem;
+  min-height: 4.5rem;
   overflow: hidden;
+  position: relative;
+  margin: 0;
+  font-family: "Plus Jakarta Sans", sans-serif;
 }
 
-.nav-links {
+
+.nav-links { 
   display: flex;
   flex-wrap: nowrap;
   justify-content: center;
@@ -47,7 +53,8 @@ body {
   gap: 1.5%;
   width: 100%;
   min-width: 0;
-  font-size: 25px
+  font-size: 25px;
+
 }
 
 .nav-links a {
@@ -60,7 +67,7 @@ body {
   transition: background-color 0.2s ease, color 0.2s ease, transform 0.2s ease;
 }
 
-.topnav .nav-links a:hover {
+.nav-links a:hover {
   background-color: white;
   color: black;
   transform: translateY(-2px);
@@ -70,10 +77,20 @@ body {
 
 
 .enneagram-logo {
-  width: 6%;
-  position: relative;
-  bottom: 10%;
-  left: 0.1%;
+  position: absolute;
+  top: 50%;
+  left: 1.5rem;
+  transform: translateY(-50%);
+  width: 4.5rem;
+  height: 4.5rem;
+  z-index: 10;
+  border-radius: 50%;
+  border: 4px solid #ffffff;
+  background-color: #ffffff;
+  padding: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .enneagram-logo img {
@@ -95,10 +112,8 @@ body {
   flex-direction: column;
   justify-content: space-around;
   width: 100%;
+  padding: 30px 15px 60px; /* extra bottom padding so bottom buttons are visible */
   
-}
-.beige-bg {
-  padding: 60px 30px 120px; /* extra bottom padding so bottom buttons are visible */
 }
 
 .white-q {
@@ -115,6 +130,7 @@ body {
   text-align: center;
   font-size: 40px;
   margin: 0 0 24px;
+  font-family: "Plus Jakarta Sans", sans-serif;
 }
 
 .progress-info {
@@ -122,21 +138,24 @@ body {
   justify-content: space-between;
   align-items: center;
   margin-bottom: 18px;
-  font-size: 0.95rem;
+  font-size: 20px;
   color: #444;
 }
 
 .progress-info .progress-label {
   font-weight: 600;
+  
 }
 
 .progress-label {
-  color:#000000
+  color:#000000;
+  font-family: "Plus Jakarta Sans", sans-serif;
 }
 
 .progress-percent {
   color:#000000;
   font-weight: 600;
+  font-family: "Plus Jakarta Sans", sans-serif;
 }
 
 .progress-bar {
@@ -232,10 +251,12 @@ body {
 
 .disagree-txt {
 font-size: 25px;
+font-family: "Plus Jakarta Sans", sans-serif;
 }
 
 .agree-txt {
 font-size: 25px;
+font-family: "Plus Jakarta Sans", sans-serif;
 }
 
 
@@ -253,7 +274,8 @@ font-size: 25px;
 .back-txt {
   color: white;
   margin: 0;
-  font-size: 25px;
+  font-size: 22px;
+  font-family: "Plus Jakarta Sans", sans-serif;
 }
 
 .next-btn {
@@ -270,7 +292,8 @@ font-size: 25px;
 .next-txt {
   color: white;
   margin: 0;
-  font-size: 25px;
+  font-size: 22px;
+  font-family: "Plus Jakarta Sans", sans-serif;
 }
 
 /* Style the search box inside the navigation bar */
@@ -302,4 +325,12 @@ font-size: 25px;
     max-width: none;
     margin-top: 0.75rem;
   }
+}
+
+.disagree-txt {
+  color: rgb(153, 15, 15);
+}
+
+.agree-txt {
+  color: green;
 }
