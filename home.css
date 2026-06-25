@@ -2,14 +2,13 @@ html {
   box-sizing: border-box;
   min-height: 100%;
   height: auto;
-  overflow-x: hidden; /* prevent horizontal scroll */
-  overflow-y: auto;  /* allow vertical scrolling */
+  overflow-x: hidden; 
+  overflow-y: auto;  
 }
 *, *::before, *::after {
   box-sizing: inherit;
 }
 
-/* the body doesn't have a background color because the border is the main design element, and the content is contained within the beige background div. */
 body {
   border: 1vw solid #750504;
   margin: 0;
@@ -25,7 +24,7 @@ body {
   width: 100%;
 }
 
-/* my navigation bar */
+
 .topnav {
   background-color: #000000;
   display: flex;
