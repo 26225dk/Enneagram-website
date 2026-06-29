@@ -3,7 +3,7 @@
 <head>
 <title>Enneagram</title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<link rel="stylesheet" href="css/moreabtennea.css">
+<link rel="stylesheet" href="css/resources.css">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&display=swap" rel="stylesheet">
@@ -18,24 +18,70 @@
 <!-- Only have content from here on -->
 <body>
 <div class="nav-header">
-    <div class="topnav" id="nav-bar">
-        <div class="enneagram-brand">
+    <nav class="topnav" id="nav-bar">
+        
             <div class="enneagram-logo">
-                <a href="#">
+                <a href="index.html">
                     <img src="logo/enneagram.png" alt="enneagram-logo">
                 </a>
             </div>
-            <span class="enneagram-text">enneagram</span>
-        </div>
-        <div class="nav-links">
-            <a class="indextxt" href="index.html">Home</a>
-            <a class="moreabttxt" href="moreabtennea.html">More about enneagram</a>
-            <a class="abtwebtxt" href="aboutweb.html">About the website</a>
-            <a class="contacttxt" href="contacts.html">Contacts</a>
-            <input type="text" placeholder="Search..">
-        </div>
-    </div>
+            
+             <span class="enneagram-text">enneagram</span>
+            
+             <div class="nav-links">
+                <a class="indextxt" href="index.html">Home</a>
+                
+                <div class="dropdown">
+                    <a class="moreabttxt active" href="moreabtennea.html">More about enneagram</a>
+                    
+                    <div class="dropdown-content">
+                        <div class="triad-section">
+                            <p class="triad-label">Heart Triad <br>
+                                These types are mainly focused on their self-image and desire for validation, either externalized (2), denied (3), or internalized (4).
+                            </p>
+                            <div class="triad-images">
+                                <a href="e2.html" class="triad-image-placeholder">2</a>
+                                <a href="e3.html" class="triad-image-placeholder">3</a>
+                                <a href="e4.html" class="triad-image-placeholder">4</a>
+                            </div>
+                        </div>
+                        
+                        <div class="triad-section">
+                            <p class="triad-label">Head Triad <br>
+                                These types are mainly focused on fear, thinking, and their desire for security, either internalized (5), externalized (6), or denied (7).
+
+                            </p>
+                            <div class="triad-images">
+                                <a href="e5.html" class="triad-image-placeholder">5</a>
+                                <a href="e6.html" class="triad-image-placeholder">6</a>
+                                <a href="e7.html" class="triad-image-placeholder">7</a>
+                            </div>
+                        </div>
+                        
+                        <div class="triad-section">
+                            <p class="triad-label">Gut Triad <br>
+                                These types are mainly focused on their anger, either externalized (8), denied (9), or internalized (1).
+
+                            </p>
+                            <div class="triad-images">
+                                <a href="e8.html" class="triad-image-placeholder">8</a>
+                                <a href="e9.html" class="triad-image-placeholder">9</a>
+                                <a href="e1.html" class="triad-image-placeholder">1</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            
+
+
+
+              <a class="resourcetxt" href="resources.html">Resources</a>
+              <a class="abtwebtxt" href="aboutweb.html">About the website</a>
+              <input type="text" placeholder="Search..">
+         </div>
+    </nav>
 </div>
+
 
 
 <div class="beige-bg">
@@ -75,3 +121,33 @@
     </div>
 
 </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<script src="script.js"></script>
+</body>
+</html>
