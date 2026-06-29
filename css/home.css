@@ -156,6 +156,9 @@ body {
   width: 90%;
   margin: 0 auto;
   flex-shrink: 0;
+  min-height: 300px;
+  max-height: 300px;
+  overflow-y: auto;
 }
 
 .questions {
@@ -200,7 +203,7 @@ body {
 }
 
 .progress-bar-fill {
-  width: 35%;
+  width: 0%;
   height: 100%;
   background-color: #750504;
   border-radius: 999px 0 0 999px;
@@ -308,7 +311,10 @@ font-family: "Plus Jakarta Sans", sans-serif;
   margin: 0;
   font-size: 22px;
   font-family: "Plus Jakarta Sans", sans-serif;
+  cursor: pointer;
+  user-select: none;
 }
+
 
 .next-btn {
   background-color: black;
@@ -319,6 +325,8 @@ font-family: "Plus Jakarta Sans", sans-serif;
   right: 15px;
   font-size: 12px;
   color: white;
+  cursor: pointer;
+  user-select: none;
 }
 
 .next-txt {
