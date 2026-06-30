@@ -144,14 +144,15 @@ body {
   flex: 1;
   display: flex;
   flex-direction: column;
-  justify-content: space-around;
+  justify-content: flex-start;
+  gap: 25px;
   width: 100%;
 }
 
 .white-box {
   background-color: white;
   border-radius: 20px;
-  padding: 50px 45px;
+  padding: 30px 45px;
   max-width: 100%;
   width: 90%;
   margin: 0 auto;
@@ -168,60 +169,41 @@ body {
 .resource-title {
   color:#000000;
   font-family: "Plus Jakarta Sans", sans-serif;
+  margin-bottom: 0;
 }
 
 .resource-file {
   text-decoration: none;
-  a:link {display:block;}
-a:visited {color:white}
-
-}
-.disagree-txt {
-font-size: 25px;
-font-family: "Plus Jakarta Sans", sans-serif;
-}
-
-.agree-txt {
-font-size: 25px;
-font-family: "Plus Jakarta Sans", sans-serif;
-}
-
-
-.back-btn {
-  background-color: black;
-  padding: 1% 2%;
-  border-radius: 100px;
-  position: absolute;
-  bottom: 15px;
-  left: 15px;
-  font-size: 12px;
-  color: white;
-}
-
-.back-txt {
-  color: white;
-  margin: 0;
-  font-size: 22px;
+  color: black;
   font-family: "Plus Jakarta Sans", sans-serif;
 }
 
-.next-btn {
-  background-color: black;
-  padding: 1% 2%;
-  border-radius: 100px;
-  position: absolute;
-  bottom: 15px;
-  right: 15px;
-  font-size: 12px;
-  color: white;
+.resource-file:visited {
+  color: black;
 }
 
-.next-txt {
-  color: white;
-  margin: 0;
-  font-size: 22px;
-  font-family: "Plus Jakarta Sans", sans-serif;
+.thxtheogie {
+    margin-top: 4px;
+    font-family: "Plus Jakarta Sans", sans-serif;
 }
+
+.resource-file:hover {
+  text-decoration: none;
+ color: #b30b12;
+}
+
+.theogie-link {
+    color: #680101;
+    text-decoration: none;
+    font-family: "Plus Jakarta Sans", sans-serif;
+}
+
+.theogie-link:hover {
+    color: #ff1f27;
+}
+
+
+
 
 /* Style the search box inside the navigation bar */
 .topnav input[type=text] {
@@ -255,13 +237,6 @@ font-family: "Plus Jakarta Sans", sans-serif;
   }
 }
 
-.disagree-txt {
-  color: rgb(153, 15, 15);
-}
-
-.agree-txt {
-  color: green;
-}
 
 /* Dropdown styles */
 .dropdown {
@@ -362,7 +337,6 @@ font-family: "Plus Jakarta Sans", sans-serif;
 
 }
 
-
 .triad-image-placeholder[href="e1.html"] {
   background-color: white;
   color: black;
@@ -418,7 +392,6 @@ font-family: "Plus Jakarta Sans", sans-serif;
   transition: background-color 0.2s ease, color 0.2s ease;
   font-size: 0.95rem;
 }
-
 
 .dropdown:hover .dropdown-content {
   display: block;
