@@ -148,7 +148,7 @@ body {
   width: 100%;
 }
 
-.white-q {
+.white-box {
   background-color: white;
   border-radius: 20px;
   padding: 50px 45px;
@@ -165,122 +165,17 @@ body {
   font-family: "Plus Jakarta Sans", sans-serif;
 }
 
-.progress-info {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin-bottom: 18px;
-  font-size: 20px;
-  color: #444;
-}
-
-.progress-info .progress-label {
-  font-weight: 600;
-  
-}
-
-.progress-label {
+.resource-title {
   color:#000000;
   font-family: "Plus Jakarta Sans", sans-serif;
 }
 
-.progress-percent {
-  color:#000000;
-  font-weight: 600;
-  font-family: "Plus Jakarta Sans", sans-serif;
-}
+.resource-file {
+  text-decoration: none;
+  a:link {display:block;}
+a:visited {color:white}
 
-.progress-bar {
-  width: 100%;
-  background-color: #ececec;
-  border-radius: 999px;
-  height: 18px;
-  overflow: hidden;
-  margin: 0 auto 20px;
 }
-
-.progress-bar-fill {
-  width: 35%;
-  height: 100%;
-  background-color: #750504;
-  border-radius: 999px 0 0 999px;
-}
-
-.answer-btns {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 25px;
-  margin-top: 30px;
-  flex-wrap: wrap;
-}
-
-.answer-btn {
-  width: 75px;
-  height: 75px;
-  border: none;
-  border-radius: 50%;
-  font-size: 10px;
-  font-weight: 600;
-  cursor: pointer;
-  transition: all 0.3s ease;
-  background-color: white;
-  color: #333;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
-  line-height: 1.1;
-  padding: 0;
-}
-
-.answer-btn:hover {
-  transform: translateY(-5px);
-}
-
-.answer-btn.strongly-disagree {
-  width: 100px;
-  height: 100px;
-  background-color: #8B0000;
-}
-
-.answer-btn.disagree {
-  width: 80px;
-  height: 80px;
-  background-color: #c83b3b;
-}
-
-.answer-btn.slightly-disagree {
-  width: 65px;
-  height: 65px;
-  background-color: #eb7979;
-}
-
-.answer-btn.neutral {
-  width: 50px;
-  height: 50px;
-  background-color: #d5d5d5;
-  color: white;
-}
-
-.answer-btn.slightly-agree {
-  width: 65px;
-  height: 65px;
-  background-color: #A0E8A0;
-}
-
-.answer-btn.agree {
-  width: 80px;
-  height: 80px;
-  background-color: #3fbf3f;
-}
-
-.answer-btn.strongly-agree {
-  width: 100px;
-  height: 100px;
-  background-color: #008B00;
-}
-
 .disagree-txt {
 font-size: 25px;
 font-family: "Plus Jakarta Sans", sans-serif;
