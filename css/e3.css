@@ -197,7 +197,7 @@ body {
 
 .block-text {
   margin: 0;
-  font-size: 1rem;
+  font-size: 1.1rem;
   line-height: 1.7;
   color: #1f1f1f;
 }
@@ -345,15 +345,15 @@ body {
   transform: translateY(-2px);
 }
 
-.triad-image-placeholder[href="e1.html"] { background-color: white; color: black; }
-.triad-image-placeholder[href="e2.html"] { background-color: #fed557; color: black; }
-.triad-image-placeholder[href="e3.html"] { background-color: #6cf3a7; color: black; }
-.triad-image-placeholder[href="e4.html"] { background-color: black; color: white; border: 2px solid rgb(182,182,182); }
-.triad-image-placeholder[href="e5.html"] { background-color: #7b5fac; color: white; }
-.triad-image-placeholder[href="e6.html"] { background-color: #153cb9; color: white; }
-.triad-image-placeholder[href="e7.html"] { background-color: #c622b7; color: white; }
-.triad-image-placeholder[href="e8.html"] { background-color: #b30b12; color: white; }
-.triad-image-placeholder[href="e9.html"] { background-color: #fdbf93; color: black; }
+.triad-image-placeholder[href="e1.html"] {background-color: white; color: black;}
+.triad-image-placeholder[href="e2.html"] {background-color: #fed557; color: black;}
+.triad-image-placeholder[href="e3.html"] {background-color: #6cf3a7; color: black;}
+.triad-image-placeholder[href="e4.html"] {background-color: black; color: white; border: 2px solid rgb(182,182,182); }
+.triad-image-placeholder[href="e5.html"] {background-color: #7b5fac; color: white;}
+.triad-image-placeholder[href="e6.html"] {background-color: #153cb9; color: white;}
+.triad-image-placeholder[href="e7.html"] {background-color: #c622b7; color: white;}
+.triad-image-placeholder[href="e8.html"] {background-color: #b30b12; color: white;}
+.triad-image-placeholder[href="e9.html"] {background-color: #fdbf93; color: black;}
 
 .dropdown-content a {
   color: #f2f2f2;
