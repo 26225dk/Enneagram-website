@@ -10,12 +10,12 @@ html {
 }
 
 body {
-  border: 1vw solid #0c1f12;
+  border: 1vw solid #000000;
   margin: 0;
   min-height: 100vh;
   overflow-x: hidden;
   overflow-y: auto;
-  background-color: #235a35;
+  background-color: #2c2c2c;
   font-family: "Plus Jakarta Sans", sans-serif;
 }
 
@@ -115,30 +115,30 @@ body {
   padding: 0 1rem;
 }
 
-.typeso3-panel {
+.type4-panel {
   background-color: #ffffff;
-  border: 1.5rem solid #1f4a2f;
+  border: 1.5rem solid #000000;
   border-radius: 1rem;
   overflow: hidden;
 }
 
-.typeso3-header {
+.type4-header {
   background-color: #ffffff;
   padding: 2rem 2rem 1rem;
   text-align: center;
-  border-bottom: 0.75rem solid #1f4a2f;
+  border-bottom: 0.75rem solid #000000;
 }
 
-.typeso3-subtitle {
+.type4-subtitle {
   margin: 0;
   font-size: 1rem;
-  color: #1d3d26;
+  color: #000000;
   letter-spacing: 0.5em;
   text-transform: uppercase;
   font-weight: 700;
 }
 
-.typeso3-header h1 {
+.type4-header h1 {
   margin: 0.5rem 0 0;
   font-family: 'Press Start 2P', cursive;
   font-size: clamp(2rem, 3vw, 3.5rem);
@@ -155,9 +155,9 @@ body {
 
 .description-box,
 .fear-desire-box,
-.instinct-card3 {
+.instinct-card4 {
   background-color: #ffffff;
-  border: 0.35rem solid #235a35;
+  border: 0.35rem solid #000000;
   border-radius: 1rem;
   
 }
@@ -166,7 +166,7 @@ body {
   padding: 1.75rem;
 }
 
-.e3-desc {
+.e4-desc {
   font-family: "Plus Jakarta Sans", sans-serif;
 }
 .description-box p {
@@ -184,12 +184,12 @@ body {
   padding: 1.75rem;
 }
 
-.block-e3 {
+.block-e4 {
   margin: 0 0 0.5rem;
   font-size: 0.95rem;
   text-transform: uppercase;
   letter-spacing: 0.12em;
-  color: #1d3d26;
+  color: #000000;
   font-weight: 700;
 }
 
@@ -197,17 +197,17 @@ body {
   margin: 0;
   font-size: 1.1rem;
   line-height: 1.7;
-  color: #1f1f1f;
+  color: #000000;
 }
 
-.instinct-row3 {
+.instinct-row4 {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 1rem;
   padding: 0 2rem 2rem;
 }
 
-.instinct-card3 {
+.instinct-card4 {
   min-height: 340px;
   padding: 1.5rem 1rem 1rem;
   display: flex;
@@ -216,27 +216,27 @@ body {
   justify-content: flex-start;
   gap: 1rem;
   background-color: #ffffff;
-  border: 0.35rem solid #235a35;
+  border: 0.35rem solid #000000;
   border-radius: 1rem;
   transition: background-color 0.25s ease, transform 0.25s ease;
   text-decoration: none;
   color: inherit;
 }
 
-.instinct-card3:hover {
-  background-color: #aed3aa;
+.instinct-card4:hover {
+  background-color: #b8b8b8;
   transform: translateY(-2px);
 }
 
-.instinct-card3 h2 {
+.instinct-card4 h2 {
   margin: 0;
   font-family: 'Press Start 2P', cursive;
   font-size: 1.4rem;
   letter-spacing: 0.25em;
-  color: #1d3d26;
+  color: #000000;
 }
 
-.instinct-card3 img {
+.instinct-card4 img {
   width: min(100%, 220px);
   max-height: 240px;
   object-fit: contain;
@@ -453,7 +453,7 @@ body {
     grid-template-columns: 1fr;
   }
 
-  .instinct-row3 {
+  .instinct-row4 {
     grid-template-columns: 1fr;
   }
 }

@@ -115,21 +115,21 @@ body {
   padding: 0 1rem;
 }
 
-.typeso3-panel {
+.type3-panel {
   background-color: #ffffff;
   border: 1.5rem solid #1f4a2f;
   border-radius: 1rem;
   overflow: hidden;
 }
 
-.typeso3-header {
+.type3-header {
   background-color: #ffffff;
   padding: 2rem 2rem 1rem;
   text-align: center;
   border-bottom: 0.75rem solid #1f4a2f;
 }
 
-.typeso3-subtitle {
+.type3-subtitle {
   margin: 0;
   font-size: 1rem;
   color: #1d3d26;
@@ -138,7 +138,7 @@ body {
   font-weight: 700;
 }
 
-.typeso3-header h1 {
+.type3-header h1 {
   margin: 0.5rem 0 0;
   font-family: 'Press Start 2P', cursive;
   font-size: clamp(2rem, 3vw, 3.5rem);
