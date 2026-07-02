@@ -419,7 +419,7 @@ font-family: "Plus Jakarta Sans", sans-serif;
   gap: 15px;
 }
 
-.triad-image-placeholder {
+.triadblock {
   width: 60px;
   height: 60px;
   border-radius: 4px;
@@ -435,55 +435,71 @@ font-family: "Plus Jakarta Sans", sans-serif;
   transition: transform 0.6s ease;
 }
 
-.triad-image-placeholder:hover {
+
+.dropdown-content a {
+  color: #f2f2f2;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+  transition: background-color 0.2s ease, color 0.2s ease;
+  font-size: 0.95rem;
+}
+
+
+
+
+
+
+
+.triadblock:hover {
   transform: scale(1.1);
 
 }
 
 
-.triad-image-placeholder[href="e1.html"] {
+.triadblock[href="e1.html"] {
   background-color: white;
   color: black;
 }
 
-.triad-image-placeholder[href="e2.html"] {
+.triadblock[href="e2.html"] {
   background-color: #fed557;
   color: black;
 }
 
-.triad-image-placeholder[href="e3.html"] {
+.triadblock[href="e3.html"] {
   background-color: #6cf3a7;
   color: black;
 }
 
-.triad-image-placeholder[href="e4.html"] {
+.triadblock[href="e4.html"] {
   background-color: black;
   color: white;
   border: 2px solid;
   border-color: rgb(182, 182, 182);
 }
 
-.triad-image-placeholder[href="e5.html"] {
+.triadblock[href="e5.html"] {
   background-color: #7b5fac;
   color: white;
 }
 
-.triad-image-placeholder[href="e6.html"] {
+.triadblock[href="e6.html"] {
   background-color: #153cb9;
   color: white;
 }
 
-.triad-image-placeholder[href="e7.html"] {
+.triadblock[href="e7.html"] {
   background-color: #c622b7;
   color: white;
 }
 
-.triad-image-placeholder[href="e8.html"] {
+.triadblock[href="e8.html"] {
   background-color: #b30b12;
   color: white;
 }
 
-.triad-image-placeholder[href="e9.html"] {
+.triadblock[href="e9.html"] {
   background-color: #fdbf93;
   color: black;
 }
@@ -507,3 +523,5 @@ font-family: "Plus Jakarta Sans", sans-serif;
   color: black;
   transform: translateY(-2px);
 }
+
+
