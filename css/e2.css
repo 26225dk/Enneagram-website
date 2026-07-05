@@ -10,7 +10,7 @@ html {
 }
 
 body {
-  border: 1vw solid #e6b935;
+  border: 1vw solid #ffce3a;
   margin: 0;
   min-height: 100vh;
   overflow-x: hidden;
@@ -179,7 +179,7 @@ body {
 .fear-desire-box {
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
+  justify-content: flex-start;
   gap: 1rem;
   padding: 1.75rem;
 }
@@ -410,15 +410,6 @@ body {
   transform: translateY(-2px);
 }
 
-.triadblock[href="e1.html"] {background-color: white; color: black;}
-.triadblock[href="e2.html"] {background-color: #fed557; color: black;}
-.triadblock[href="e3.html"] {background-color: #6cf3a7; color: black;}
-.triadblock[href="e4.html"] {background-color: black; color: white; border: 2px solid rgb(182,182,182); }
-.triadblock[href="e5.html"] {background-color: #7b5fac; color: white;}
-.triadblock[href="e6.html"] {background-color: #153cb9; color: white;}
-.triadblock[href="e7.html"] {background-color: #c622b7; color: white;}
-.triadblock[href="e8.html"] {background-color: #b30b12; color: white;}
-.triadblock[href="e9.html"] {background-color: #fdbf93; color: black;}
 
 .dropdown-content a {
   color: #f2f2f2;

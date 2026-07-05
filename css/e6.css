@@ -10,12 +10,12 @@ html {
 }
 
 body {
-  border: 1vw solid #dfdfdf;
+  border: 1vw solid #0d236b;
   margin: 0;
   min-height: 100vh;
   overflow-x: hidden;
   overflow-y: auto;
-  background-color: #235a35;
+  background-color: #153cb9;
   font-family: "Plus Jakarta Sans", sans-serif;
 }
 
@@ -117,7 +117,7 @@ body {
 
 .type6-panel {
   background-color: #ffffff;
-  border: 1.5rem solid #343434;
+  border: 1.5rem solid #0d236b;
   border-radius: 1rem;
   overflow: hidden;
 }
@@ -126,13 +126,13 @@ body {
   background-color: #ffffff;
   padding: 2rem 2rem 1rem;
   text-align: center;
-  border-bottom: 0.75rem solid #343434;
+  border-bottom: 0.75rem solid #0d236b;
 }
 
 .type6-subtitle {
   margin: 0;
   font-size: 1rem;
-  color: #1d3d26;
+  color: #0d236b;
   letter-spacing: 0.5em;
   text-transform: uppercase;
   font-weight: 700;
@@ -157,7 +157,7 @@ body {
 .fear-desire-box,
 .instinct-card {
   background-color: #ffffff;
-  border: 0.35rem solid #235a35;
+  border: 0.35rem solid #0d236b;
   border-radius: 1rem;
   
 }
@@ -173,7 +173,7 @@ body {
   margin: 0;
   font-size: 1rem;
   line-height: 1.8;
-  color: #1f1f1f;
+  color: #000000;
 }
 
 .fear-desire-box {
@@ -189,7 +189,7 @@ body {
   font-size: 0.95rem;
   text-transform: uppercase;
   letter-spacing: 0.12em;
-  color: #1d3d26;
+  color: #0d236b;
   font-weight: 700;
 }
 
@@ -197,7 +197,7 @@ body {
   margin: 0;
   font-size: 1.1rem;
   line-height: 1.7;
-  color: #1f1f1f;
+  color: #000000;
 }
 
 .instinct-row {
@@ -216,7 +216,7 @@ body {
   justify-content: flex-start;
   gap: 1rem;
   background-color: #ffffff;
-  border: 0.35rem solid #235a35;
+  border: 0.35rem solid #0d236b;
   border-radius: 1rem;
   transition: background-color 0.25s ease, transform 0.25s ease;
   text-decoration: none;
@@ -224,7 +224,7 @@ body {
 }
 
 .instinct-card:hover {
-  background-color: #aed3aa;
+  background-color: #9eb4fc;
   transform: translateY(-2px);
 }
 
@@ -233,7 +233,7 @@ body {
   font-family: 'Press Start 2P', cursive;
   font-size: 1.4rem;
   letter-spacing: 0.25em;
-  color: #1d3d26;
+  color: #0d236b;
 }
 
 .instinct-card img {
@@ -410,17 +410,6 @@ body {
   transform: translateY(-2px);
 }
 
-
-
-.triadblock[href="e1.html"] {background-color: white; color: black;}
-.triadblock[href="e2.html"] {background-color: #fed557; color: black;}
-.triadblock[href="e3.html"] {background-color: #6cf3a7; color: black;}
-.triadblock[href="e4.html"] {background-color: black; color: white; border: 2px solid rgb(182,182,182); }
-.triadblock[href="e5.html"] {background-color: #7b5fac; color: white;}
-.triadblock[href="e6.html"] {background-color: #153cb9; color: white;}
-.triadblock[href="e7.html"] {background-color: #c622b7; color: white;}
-.triadblock[href="e8.html"] {background-color: #b30b12; color: white;}
-.triadblock[href="e9.html"] {background-color: #fdbf93; color: black;}
 
 .dropdown-content a {
   color: #f2f2f2;

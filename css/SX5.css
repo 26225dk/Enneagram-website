@@ -10,12 +10,12 @@ html {
 }
 
 body {
-  border: 1vw solid #0c1f12;
+  border: 1vw solid #362455;
   margin: 0;
   min-height: 100vh;
   overflow-x: hidden;
   overflow-y: auto;
-  background-color: #235a35;
+  background-color: #7b5fac;
   font-family: "Plus Jakarta Sans", sans-serif;
 }
 
@@ -115,30 +115,30 @@ body {
   padding: 0 1rem;
 }
 
-.type3-panel {
+.typesx5-panel {
   background-color: #ffffff;
-  border: 1.5rem solid #1f4a2f;
+  border: 1.5rem solid #3f2f5a;
   border-radius: 1rem;
   overflow: hidden;
 }
 
-.type3-header {
+.typesx5-header {
   background-color: #ffffff;
   padding: 2rem 2rem 1rem;
   text-align: center;
-  border-bottom: 0.75rem solid #1f4a2f;
+  border-bottom: 0.75rem solid #3f2f5a;
 }
 
-.type3-subtitle {
+.typesx5-subtitle {
   margin: 0;
   font-size: 1rem;
-  color: #1d3d26;
+  color: #62419b;
   letter-spacing: 0.5em;
   text-transform: uppercase;
   font-weight: 700;
 }
 
-.type3-header h1 {
+.typesx5-header h1 {
   margin: 0.5rem 0 0;
   font-family: 'Press Start 2P', cursive;
   font-size: clamp(2rem, 3vw, 3.5rem);
@@ -146,32 +146,29 @@ body {
   line-height: 1.05;
 }
 
-.info-layout {
+.info-layout-sx5 {
   display: grid;
   grid-template-columns: 1.8fr 1fr;
   gap: 1rem;
   padding: 2rem;
 }
 
-.description-box,
-.fear-desire-box,
-.instinct-card3 {
+.description-box-sx5,
+.fear-desire-box {
   background-color: #ffffff;
-  border: 0.35rem solid #235a35;
+  border: 0.35rem solid #3f2f5a;
   border-radius: 1rem;
-  
-}
-
-.description-box {
-  padding: 1.75rem;
-}
-
-.e3-desc {
+  font-size: 1rem;
   font-family: "Plus Jakarta Sans", sans-serif;
 }
-.description-box p {
+
+.description-box-sx5 {
+  padding: 1.5rem;
+}
+
+.description-box-sx5 p {
   margin: 0;
-  font-size: 1rem;
+  font-size: 1.2rem;
   line-height: 1.8;
   color: #1f1f1f;
 }
@@ -179,71 +176,29 @@ body {
 .fear-desire-box {
   display: flex;
   flex-direction: column;
-  justify-content: flex-start;
+  justify-content: space-between;
   gap: 1rem;
   padding: 1.75rem;
 }
 
-.block-e3 {
+.block-sx5 {
   margin: 0 0 0.5rem;
-  font-size: 0.95rem;
-  text-transform: uppercase;
-  letter-spacing: 0.12em;
-  color: #1d3d26;
-  font-weight: 700;
+  font-size: 1rem;
+  letter-spacing: 0.1em;
+  color: #3f2f5a;
+  font-weight: 500;
+  
 }
+
 
 .block-text {
   margin: 0;
   font-size: 1.1rem;
   line-height: 1.7;
-  color: #1f1f1f;
+  color: #000000;
 }
 
-.instinct-row3 {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 1rem;
-  padding: 0 2rem 2rem;
-}
-
-.instinct-card3 {
-  min-height: 340px;
-  padding: 1.5rem 1rem 1rem;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: flex-start;
-  gap: 1rem;
-  background-color: #ffffff;
-  border: 0.35rem solid #235a35;
-  border-radius: 1rem;
-  transition: background-color 0.25s ease, transform 0.25s ease;
-  text-decoration: none;
-  color: inherit;
-}
-
-.instinct-card3:hover {
-  background-color: #aed3aa;
-  transform: translateY(-2px);
-}
-
-.instinct-card3 h2 {
-  margin: 0;
-  font-family: 'Press Start 2P', cursive;
-  font-size: 1.4rem;
-  letter-spacing: 0.25em;
-  color: #1d3d26;
-}
-
-.instinct-card3 img {
-  width: min(100%, 220px);
-  max-height: 240px;
-  object-fit: contain;
-  border-radius: 1rem;
-}
-
-/* Dropdown styles */
+/* START: COPY-PASTE DROPDOWN NAV STYLES (from SO3.css) */
 .dropdown {
   position: relative;
   display: inline-flex;
@@ -321,7 +276,6 @@ body {
   transition: transform 0.6s ease;
 }
 
-
 .dropdown-content a {
   color: #f2f2f2;
   padding: 12px 16px;
@@ -331,17 +285,9 @@ body {
   font-size: 0.95rem;
 }
 
-
-
-
-
-
-
 .triadblock:hover {
   transform: scale(1.1);
-
 }
-
 
 .triadblock[href="e1.html"] {
   background-color: white;
@@ -390,16 +336,6 @@ body {
   color: black;
 }
 
-.dropdown-content a {
-  color: #f2f2f2;
-  padding: 12px 16px;
-  text-decoration: none;
-  display: block;
-  transition: background-color 0.2s ease, color 0.2s ease;
-  font-size: 0.95rem;
-}
-
-
 .dropdown:hover .dropdown-content {
   display: block;
 }
@@ -408,16 +344,6 @@ body {
   background-color: white;
   color: black;
   transform: translateY(-2px);
-}
-
-
-.dropdown-content a {
-  color: #f2f2f2;
-  padding: 12px 16px;
-  text-decoration: none;
-  display: block;
-  transition: background-color 0.2s ease, color 0.2s ease;
-  font-size: 0.95rem;
 }
 
 .topnav input[type=text] {
@@ -438,11 +364,7 @@ body {
 }
 
 @media (max-width: 920px) {
-  .info-layout {
-    grid-template-columns: 1fr;
-  }
-
-  .instinct-row3 {
+  .info-layout-sx5 {
     grid-template-columns: 1fr;
   }
 }
@@ -466,3 +388,4 @@ body {
     margin-top: 0.75rem;
   }
 }
+/* END: COPY-PASTE DROPDOWN NAV STYLES */

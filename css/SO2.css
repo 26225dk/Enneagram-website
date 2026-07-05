@@ -146,14 +146,14 @@ body {
   line-height: 1.05;
 }
 
-.info-layout {
+.info-layout-so2 {
   display: grid;
   grid-template-columns: 1.8fr 1fr;
   gap: 1rem;
   padding: 2rem;
 }
 
-.description-box,
+.description-box-so2,
 .fear-desire-box,
 .instinct-card3 {
   background-color: #ffffff;
@@ -162,16 +162,16 @@ body {
   
 }
 
-.description-box {
+.description-box-so2 {
   padding: 1.75rem;
 }
 
-.e3-desc {
+.e2-desc {
   font-family: "Plus Jakarta Sans", sans-serif;
 }
-.description-box p {
+.description-box-so2 p {
   margin: 0;
-  font-size: 1rem;
+  font-size: 1.2rem;
   line-height: 1.8;
   color: #1f1f1f;
 }
@@ -187,10 +187,11 @@ body {
 .block-so2 {
   margin: 0 0 0.5rem;
   font-size: 0.95rem;
-  text-transform: uppercase;
   letter-spacing: 0.12em;
+  font-weight: 500;
   color: #b18c20;
-  font-weight: 700;
+  font-family: "Plus Jakarta Sans", sans-serif;
+
 }
 
 .block-text {
@@ -449,7 +450,7 @@ body {
 }
 
 @media (max-width: 920px) {
-  .info-layout {
+  .info-layout-so2 {
     grid-template-columns: 1fr;
   }
 
