@@ -10,12 +10,12 @@ html {
 }
 
 body {
-  border: 1vw solid #0c1f12;
+  border: 1vw solid #6e88bf;
   margin: 0;
   min-height: 100vh;
   overflow-x: hidden;
   overflow-y: auto;
-  background-color: #235a35;
+  background-color: #dfdfdf;
   font-family: "Plus Jakarta Sans", sans-serif;
 }
 
@@ -115,30 +115,30 @@ body {
   padding: 0 1rem;
 }
 
-.type3-panel {
+.typesp1-panel {
   background-color: #ffffff;
-  border: 1.5rem solid #1f4a2f;
+  border: 1.5rem solid #6e88bf;
   border-radius: 1rem;
   overflow: hidden;
 }
 
-.type3-header {
+.typesp1-header {
   background-color: #ffffff;
   padding: 2rem 2rem 1rem;
   text-align: center;
-  border-bottom: 0.75rem solid #1f4a2f;
+  border-bottom: 0.75rem solid #6e88bf;
 }
 
-.type3-subtitle {
+.typesp1-subtitle {
   margin: 0;
   font-size: 1rem;
-  color: #1d3d26;
+  color: #6e88bf;
   letter-spacing: 0.5em;
   text-transform: uppercase;
   font-weight: 700;
 }
 
-.type3-header h1 {
+.typesp1-header h1 {
   margin: 0.5rem 0 0;
   font-family: 'Press Start 2P', cursive;
   font-size: clamp(2rem, 3vw, 3.5rem);
@@ -146,34 +146,46 @@ body {
   line-height: 1.05;
 }
 
-.info-layout {
+.sp1-h1 {
+  display: inline-flex;
+  align-items: baseline;
+  justify-content: center;
+  gap: 0.2em;
+  white-space: nowrap;
+} 
+
+.info-layout-sp1 {
   display: grid;
   grid-template-columns: 1.8fr 1fr;
   gap: 1rem;
   padding: 2rem;
 }
 
-.description-box,
-.fear-desire-box,
-.instinct-card3 {
+.description-box-sp1,
+.fear-desire-box {
   background-color: #ffffff;
-  border: 0.35rem solid #235a35;
+  border: 0.35rem solid #6e88bf;
   border-radius: 1rem;
-  
-}
-
-.description-box {
-  padding: 1.75rem;
-}
-
-.e3-desc {
+  font-size: 1rem;
   font-family: "Plus Jakarta Sans", sans-serif;
 }
-.description-box p {
-  margin: 0;
-  font-size: 1rem;
-  line-height: 1.8;
-  color: #1f1f1f;
+
+.description-box-sp1 {
+  padding: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  min-height: 360px;
+}
+
+.description-box-sp1 img {
+  display: block;
+  width: auto;
+  max-width: 100%;
+  height: auto;
+  max-height: min(74vh, 560px);
+  object-fit: contain;
 }
 
 .fear-desire-box {
@@ -182,15 +194,23 @@ body {
   justify-content: space-between;
   gap: 1rem;
   padding: 1.75rem;
+  min-width: 0;
 }
 
-.block-e3 {
+.info-layout-sp1 {
+  display: grid;
+  grid-template-columns: minmax(0, 1.1fr) minmax(280px, 0.9fr);
+  align-items: start;
+  gap: 1rem;
+  padding: 2rem;
+}
+
+.block-sp1 {
   margin: 0 0 0.5rem;
-  font-size: 0.95rem;
-  text-transform: uppercase;
-  letter-spacing: 0.12em;
-  color: #1d3d26;
-  font-weight: 700;
+  font-size: 1rem;
+  letter-spacing: 0.1em;
+  color: #6e88bf;
+  font-weight: 500;
 }
 
 .block-text {
@@ -216,7 +236,7 @@ body {
   justify-content: flex-start;
   gap: 1rem;
   background-color: #ffffff;
-  border: 0.35rem solid #235a35;
+  border: 0.35rem solid #6e88bf;
   border-radius: 1rem;
   transition: background-color 0.25s ease, transform 0.25s ease;
   text-decoration: none;
@@ -224,7 +244,7 @@ body {
 }
 
 .instinct-card3:hover {
-  background-color: #aed3aa;
+  background-color: #dadada;
   transform: translateY(-2px);
 }
 
@@ -449,7 +469,7 @@ body {
 }
 
 @media (max-width: 920px) {
-  .info-layout {
+  .info-layout-sp1 {
     grid-template-columns: 1fr;
   }
 

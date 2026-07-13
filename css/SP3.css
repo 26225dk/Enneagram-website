@@ -162,8 +162,7 @@ body {
 }
 
 .description-box-sp3,
-.fear-desire-box,
-.instinct-card3 {
+.fear-desire-box {
   background-color: #ffffff;
   border: 0.35rem solid #235a35;
   border-radius: 1rem;
@@ -172,17 +171,21 @@ body {
 }
 
 .description-box-sp3 {
-  padding: 1.5rem;
+  padding: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  min-height: 360px;
 }
 
-.e3-desc {
-  font-family: "Plus Jakarta Sans", sans-serif;
-}
-.description-box-sp3 p {
-  margin: 0;
-  font-size: 1.2rem;
-  line-height: 1.8;
-  color: #1f1f1f;
+.description-box-sp3 img {
+  display: block;
+  width: auto;
+  max-width: 100%;
+  height: auto;
+  max-height: min(74vh, 560px);
+  object-fit: contain;
 }
 
 .fear-desire-box {
@@ -191,6 +194,15 @@ body {
   justify-content: space-between;
   gap: 1rem;
   padding: 1.75rem;
+  min-width: 0;
+}
+
+.info-layout-sp3 {
+  display: grid;
+  grid-template-columns: minmax(0, 1.1fr) minmax(280px, 0.9fr);
+  align-items: start;
+  gap: 1rem;
+  padding: 2rem;
 }
 
 .block-sp3 {

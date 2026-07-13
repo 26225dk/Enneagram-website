@@ -10,7 +10,7 @@ html {
 }
 
 body {
-  border: 1vw solid #e6b935;
+  border: 1vw solid #ffce3a;
   margin: 0;
   min-height: 100vh;
   overflow-x: hidden;
@@ -132,7 +132,7 @@ body {
 .typesp2-subtitle {
   margin: 0;
   font-size: 1rem;
-  color: #d49f00;
+  color: #ffce3a;
   letter-spacing: 0.5em;
   text-transform: uppercase;
   font-weight: 700;
@@ -154,33 +154,50 @@ body {
   white-space: nowrap;
 }
 
-.type-tag {
-  display: inline-block;
+.description-box-sp2,
+.fear-desire-box {
+  background-color: #ffffff;
+  border: 0.35rem solid #ffce3a;
+  border-radius: 1rem;
+  font-size: 1rem;
+  font-family: "Plus Jakarta Sans", sans-serif;
+}
+
+.description-box-sp2 {
+  padding: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  min-height: 360px;
+}
+
+.description-box-sp2 img {
+  display: block;
+  width: auto;
+  max-width: 100%;
+  height: auto;
+  max-height: min(74vh, 560px);
+  object-fit: contain;
+}
+
+.fear-desire-box {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 1.75rem;
+  min-width: 0;
 }
 
 .info-layout-sp2 {
   display: grid;
-  grid-template-columns: 1.8fr 1fr;
+  grid-template-columns: minmax(0, 1.1fr) minmax(280px, 0.9fr);
+  align-items: start;
   gap: 1rem;
   padding: 2rem;
 }
 
-.description-box-sp2,
-.fear-desire-box,
-.instinct-card3 {
-  background-color: #ffffff;
-  border: 0.35rem solid #ffce3a;
-  border-radius: 1rem;
-  
-}
-
-.description-box-sp2 {
-  padding: 1.75rem;
-}
-
-.e2-desc {
-  font-family: "Plus Jakarta Sans", sans-serif;
-}
 .description-box-sp2 p {
   margin: 0;
   font-size: 1.2rem;
@@ -188,75 +205,31 @@ body {
   color: #1f1f1f;
 }
 
-.fear-desire-box {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  padding: 1.75rem;
+.block-sp2 {
+  margin: 0 0 0.5rem;
+  font-size: 1rem;
+  letter-spacing: 0.1em;
+  color: #ffce3a;
+  font-weight: 700;
 }
 
-.block-sp2 {
-   margin: 0 0 0.5rem;
+.block-title {
+  margin: 0 0 0.25rem;
   font-size: 0.95rem;
   letter-spacing: 0.12em;
+  color: #ffce3a;
   font-weight: 500;
-  color: #b18c20;
-  font-family: "Plus Jakarta Sans", sans-serif;
-
 }
-
 
 .block-text {
   margin: 0;
   font-size: 1.1rem;
   line-height: 1.7;
-  color: #1f1f1f;
+  color: #000000;
+  font-weight: 500;
 }
 
-.instinct-row3 {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 1rem;
-  padding: 0 2rem 2rem;
-}
-
-.instinct-card3 {
-  min-height: 340px;
-  padding: 1.5rem 1rem 1rem;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: flex-start;
-  gap: 1rem;
-  background-color: #ffffff;
-  border: 0.35rem solid #235a35;
-  border-radius: 1rem;
-  transition: background-color 0.25s ease, transform 0.25s ease;
-  text-decoration: none;
-  color: inherit;
-}
-
-.instinct-card3:hover {
-  background-color: #aed3aa;
-  transform: translateY(-2px);
-}
-
-.instinct-card3 h2 {
-  margin: 0;
-  font-family: 'Press Start 2P', cursive;
-  font-size: 1.4rem;
-  letter-spacing: 0.25em;
-  color: #1d3d26;
-}
-
-.instinct-card3 img {
-  width: min(100%, 220px);
-  max-height: 240px;
-  object-fit: contain;
-  border-radius: 1rem;
-}
-
-/* Dropdown styles */
+/* START: COPY-PASTE DROPDOWN NAV STYLES (from SO3.css) */
 .dropdown {
   position: relative;
   display: inline-flex;
@@ -334,7 +307,6 @@ body {
   transition: transform 0.6s ease;
 }
 
-
 .dropdown-content a {
   color: #f2f2f2;
   padding: 12px 16px;
@@ -344,17 +316,9 @@ body {
   font-size: 0.95rem;
 }
 
-
-
-
-
-
-
 .triadblock:hover {
   transform: scale(1.1);
-
 }
-
 
 .triadblock[href="e1.html"] {
   background-color: white;
@@ -403,16 +367,6 @@ body {
   color: black;
 }
 
-.dropdown-content a {
-  color: #f2f2f2;
-  padding: 12px 16px;
-  text-decoration: none;
-  display: block;
-  transition: background-color 0.2s ease, color 0.2s ease;
-  font-size: 0.95rem;
-}
-
-
 .dropdown:hover .dropdown-content {
   display: block;
 }
@@ -421,27 +375,6 @@ body {
   background-color: white;
   color: black;
   transform: translateY(-2px);
-}
-
-
-
-.triadblock[href="e1.html"] {background-color: white; color: black;}
-.triadblock[href="e2.html"] {background-color: #fed557; color: black;}
-.triadblock[href="e3.html"] {background-color: #6cf3a7; color: black;}
-.triadblock[href="e4.html"] {background-color: black; color: white; border: 2px solid rgb(182,182,182); }
-.triadblock[href="e5.html"] {background-color: #7b5fac; color: white;}
-.triadblock[href="e6.html"] {background-color: #153cb9; color: white;}
-.triadblock[href="e7.html"] {background-color: #c622b7; color: white;}
-.triadblock[href="e8.html"] {background-color: #b30b12; color: white;}
-.triadblock[href="e9.html"] {background-color: #fdbf93; color: black;}
-
-.dropdown-content a {
-  color: #f2f2f2;
-  padding: 12px 16px;
-  text-decoration: none;
-  display: block;
-  transition: background-color 0.2s ease, color 0.2s ease;
-  font-size: 0.95rem;
 }
 
 .topnav input[type=text] {
@@ -465,10 +398,6 @@ body {
   .info-layout-sp2 {
     grid-template-columns: 1fr;
   }
-
-  .instinct-row3 {
-    grid-template-columns: 1fr;
-  }
 }
 
 @media (max-width: 640px) {
@@ -490,3 +419,4 @@ body {
     margin-top: 0.75rem;
   }
 }
+/* END: COPY-PASTE DROPDOWN NAV STYLES */

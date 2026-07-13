@@ -148,7 +148,8 @@ body {
 
 .info-layout-so6 {
   display: grid;
-  grid-template-columns: 1.8fr 1fr;
+  grid-template-columns: minmax(0, 1.15fr) minmax(280px, 0.9fr);
+  align-items: start;
   gap: 1rem;
   padding: 2rem;
 }
@@ -163,7 +164,40 @@ body {
 }
 
 .description-box-so6 {
-  padding: 1.5rem;
+  padding: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  min-height: 360px;
+}
+
+.description-box-so6 img {
+  display: block;
+  width: auto;
+  max-width: 100%;
+  height: auto;
+  max-height: min(74vh, 560px);
+  object-fit: contain;
+}
+
+.fear-desire-box {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 1.75rem;
+  min-width: 0;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.info-layout-so6 {
+  display: grid;
+  grid-template-columns: minmax(0, 1.1fr) minmax(280px, 0.9fr);
+  align-items: start;
+  gap: 1rem;
+  padding: 2rem;
 }
 
 .description-box-so6 p {
@@ -173,20 +207,16 @@ body {
   color: #000000;
 }
 
-.fear-desire-box {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  gap: 1rem;
-  padding: 1.75rem;
-}
-
 .block-so6 {
   margin: 0 0 0.5rem;
   font-size: 1rem;
   letter-spacing: 0.1em;
   color: #0d236b;
   font-weight: 700;
+  width: 100%;
+  max-width: 100%;
+  display: block;
+  box-sizing: border-box;
 }
 
 .block-title {
@@ -195,6 +225,9 @@ body {
   letter-spacing: 0.12em;
   color: #0d236b;
   font-weight: 500;
+  width: 100%;
+  max-width: 100%;
+  white-space: normal;
 }
 
 .block-text {
@@ -203,6 +236,11 @@ body {
   line-height: 1.7;
   color: #000000;
   font-weight: 500;
+  width: 100%;
+  max-width: 100%;
+  white-space: normal;
+  overflow-wrap: anywhere;
+  word-break: break-word;
 }
 
 /* START: COPY-PASTE DROPDOWN NAV STYLES (from SO3.css) */
