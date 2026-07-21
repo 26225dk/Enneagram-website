@@ -336,7 +336,7 @@ font-family: "Plus Jakarta Sans", sans-serif;
   font-family: "Plus Jakarta Sans", sans-serif;
 }
 
-/* Style the search box inside the navigation bar */
+/* Style the search box */
 .topnav input[type=text] {
   float: none;
   margin: 0;

@@ -1,3 +1,4 @@
+// This shows ""
 const navLinks = document.querySelectorAll('.topnav .nav-links a');
 navLinks.forEach(link => {
     link.addEventListener('click', event => {
@@ -6,6 +7,7 @@ navLinks.forEach(link => {
     });
 });
 
+//This shows ""
 const questions = [
   { 
     text: "I like things to feel correct, fair, and well planned.",
@@ -37,6 +39,7 @@ const questions = [
   }
 ];
 
+// This shows the current standing of enneagram scores 
 let current = 0;
 let typeScores = { 1:0, 2:0, 3:0, 4:0, 5:0, 6:0, 7:0, 8:0, 9:0 };
 let instinctScores = { sp:0, so:0, sx:0 };
@@ -48,6 +51,7 @@ function showQuestion() {
     }
 }
 
+// This shows ""
 function updateProgress() {
     const totalQuestions = questions.length;
     // Base progress directly on how many questions have been answered out of total
@@ -56,6 +60,7 @@ function updateProgress() {
     document.querySelector(".progress-percent").textContent = Math.round(progress) + "%";
 }
 
+// This shows ""
 function applyQuestionScore(q, value) {
     q.tags.enneagram.forEach(type => {
         typeScores[type] += value;
@@ -65,7 +70,7 @@ function applyQuestionScore(q, value) {
     });
 }
 
-// THIS FIXES THE REFRESH ISSUE: Forces browser to show first question instantly on load
+// Forces browser to show first question instantly on load
 document.addEventListener("DOMContentLoaded", () => {
     current = 0;
     history = [];
@@ -73,6 +78,7 @@ document.addEventListener("DOMContentLoaded", () => {
     updateProgress();
 });
 
+// This shows ""
 document.querySelectorAll(".answer-btn").forEach(btn => {
     btn.addEventListener("click", () => {
         // Prevent clicking if quiz is already over
@@ -102,6 +108,7 @@ document.querySelectorAll(".answer-btn").forEach(btn => {
     });
 });
 
+// This shows ""
 document.querySelector(".back-btn").addEventListener("click", () => {
     if (current === 0 || history.length === 0) return;
 
@@ -119,3 +126,4 @@ document.querySelector(".back-btn").addEventListener("click", () => {
     showQuestion();
     updateProgress();
 });
+
