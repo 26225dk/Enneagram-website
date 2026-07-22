@@ -179,7 +179,6 @@ body {
 .fear-desire-box {
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
   gap: 1rem;
   padding: 1.75rem;
 }

@@ -112,8 +112,6 @@ body {
   text-underline-offset: 6px;
 }
 
-
-
 .enneagram-logo {
   width: 4rem;
   height: 4rem;
@@ -149,61 +147,18 @@ body {
   width: 100%;
 }
 
-.white-box {
+.white-q {
   background-color: white;
   border-radius: 20px;
-  padding: 30px 45px;
+  padding: 50px 45px;
   max-width: 100%;
   width: 90%;
   margin: 0 auto;
   flex-shrink: 0;
+  min-height: 300px;
+  max-height: 300px;
+  overflow-y: auto;
 }
-
-.questions {
-  text-align: center;
-  font-size: 40px;
-  margin: 0 0 24px;
-  font-family: "Plus Jakarta Sans", sans-serif;
-}
-
-.resource-title {
-  color:#000000;
-  font-family: "Plus Jakarta Sans", sans-serif;
-  margin-bottom: 0;
-}
-
-.resource-file {
-  text-decoration: none;
-  color: black;
-  font-family: "Plus Jakarta Sans", sans-serif;
-}
-
-.resource-file:visited {
-  color: black;
-}
-
-.thxtheogie {
-    margin-top: 4px;
-    font-family: "Plus Jakarta Sans", sans-serif;
-}
-
-.resource-file:hover {
-  text-decoration: none;
- color: #b30b12;
-}
-
-.theogie-link {
-    color: #680101;
-    text-decoration: none;
-    font-family: "Plus Jakarta Sans", sans-serif;
-}
-
-.theogie-link:hover {
-    color: #ff1f27;
-}
-
-
-
 
 /* Style the search box inside the navigation bar */
 .topnav input[type=text] {
@@ -221,6 +176,11 @@ body {
 .topnav input[type=text]::placeholder {
   color: rgba(255, 255, 255, 0.75);
 }
+
+
+
+
+
 
 
 /* to accommodate for mobile users */
