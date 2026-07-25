@@ -12,6 +12,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&family=Sora:wght@100..800&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
 </head>
     
 
@@ -84,10 +85,10 @@
 
 
 
-<div class="beige-bg">
-
+<div class="beige-bg"> 
+<!-- This creates the beige looking background -->
     <div class="white-q">
-       
+       <!-- This creates the white question padding area  -->
         <div class="progress-info">
             <span class="progress-label">progress</span>
             <span class="progress-percent">35%</span>
@@ -96,7 +97,7 @@
         <div class="progress-bar">
             <div class="progress-bar-fill"></div>
         </div>
-
+        <!-- This is my progress bar and it fills in whenever the user answers a question -->
         <p class="questions" id="question-text"></p>
     </div>
 
@@ -111,15 +112,18 @@
         <button class="answer-btn strongly-agree" data-value="3"></button>
         <p class="agree-txt"> Agree </p>
     </div>
+    <!-- These are my circle buttons to let the user pick from a scale of strongly disagree to strongly agree.  -->
+
+    <div id="quiz-result" class="quiz-result-card" hidden></div>
 
     <div class="back-btn">
         <p class="back-txt">← Back</p>
     </div>
-
+    <!-- This button lets the user go back to the previous question if they make a mistake  -->
     <div class="next-btn">
         <p class="next-txt">Next →</p>
     </div>
-
+    <!-- If this button is clicked I will make it so that it says "Choose a circle first" and while this does not serve much purpose, I placed it here so that it is balanced with the back button otherwise the back button looks out of place and aesthetically unpleasing -->
 
 
 </div>
