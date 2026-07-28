@@ -14,10 +14,6 @@ const questions = [
     tags: { enneagram: [1, 6], instinct: ["so", "sp"] } 
   },
   { 
-    text: "I notice when a plan is messy or when details are missing.", 
-    tags: { enneagram: [1, 5, 6], instinct: ["so", "sp"] } 
-  },
-  { 
     text: "I detect errors down to the last detail and I am tempted to correct them even when they are not my own.", 
     tags: { enneagram: [1, 5, 6], instinct: ["so", "sp"] } 
   },
@@ -26,17 +22,101 @@ const questions = [
     tags: { enneagram: [1, 2, 6], instinct: ["so", "sp", "sx"] } 
   },
   { 
-    text: "I have an \"inner critic\" that guards my thoughts and actions to make sure that what I do is morally correct.", 
-    tags: { enneagram: [1, 5, 6], instinct: ["sp", "sx"] } 
+    text: "I like it better when I'm the one doing things for another person more often than them doing something for me.", 
+    tags: { enneagram: [2, 8], instinct: ["so", "sx"] } 
   },
   { 
-    text: "I criticize myself a lot internally if I am not able to do things ethically and morally.", 
-    tags: { enneagram: [1, 4, 6], instinct: ["sp", "sx"] } 
+    text: "I prioritize and think that other people's satisfaction is more important than my own", 
+    tags: { enneagram: [2], instinct: ["sp", "sx"] } 
   },
   { 
-    text: "I invest a lot of time and effort into correcting my mistakes, whatever they are.", 
-    tags: { enneagram: [1, 3, 6], instinct: ["sp", "sx"] } 
-  }
+    text: "I cheer others up and want them to feel happy", 
+    tags: { enneagram: [2], instinct: ["sp", "so"] } 
+  },
+  { 
+    text: "I am often the role model for image and success and I like that.", 
+    tags: { enneagram: [3], instinct: ["so", "sx"] } 
+  },
+  { 
+    text: "I appreciate it when others admire my success.", 
+    tags: { enneagram: [3], instinct: ["sp", "so"] } 
+  },
+  { 
+    text: "If I am desirable and attractive, then I am valuable.", 
+    tags: { enneagram: [3], instinct: ["sx", "so"] } 
+  },
+  { 
+    text: "I have been accused of being overdramatic or too expressive, but this is because people don't understand what I'm feeling.", 
+    tags: { enneagram: [4], instinct: ["sx", "so"] } 
+  },
+  { 
+    text: "I feel that I am different and feel my emotions in a deeper way compared to others.", 
+    tags: { enneagram: [4], instinct: ["so", "sx", "sp",] } 
+  },
+  { 
+    text: "I am sensitive and usually express it through art-related activities like writing, painting, etc.", 
+    tags: { enneagram: [4], instinct: ["sp", "so"] } 
+  },
+  { 
+    text: "I am knowledgeable and competent but I'm not really sociable and I usually struggle with relationships.", 
+    tags: { enneagram: [5], instinct: ["sp", "sx", "so"] } 
+  },
+  { 
+    text: "I spend a lot of my free time learning new things to gain more knowledge, even if these topics won't be useful in practice.", 
+    tags: { enneagram: [5], instinct: ["so", "sp", "sx"] } 
+  },
+  { 
+    text: "I'm independent and keep my distance, but I yearn for a soulmate who can understand me without draining too much of my energy.", 
+    tags: { enneagram: [5], instinct: ["sx", "sp", "so"] } 
+  },
+  { 
+    text: "I need the opinion of my loved ones or an authority figure when making a decision.", 
+    tags: { enneagram: [6], instinct: ["so", "sp", "sx"] } 
+  },
+  { 
+    text: "I imagine the worst case scenario and emotionally prepare myself for it.", 
+    tags: { enneagram: [6], instinct: ["sp", "sx", "so"] } 
+  },
+  { 
+    text: "I am constantly anxious and aware of things that could go wrong.", 
+    tags: { enneagram: [6], instinct: ["sx", "sp", "so"] } 
+  },
+  { 
+    text: "I tend to see people and the world through an idealistic and romantic point of view.", 
+    tags: { enneagram: [7], instinct: ["sx", "sp", "so"] } 
+  },
+  { 
+    text: "I am a pure person because I sacrifice my selfish desires for a better social cause.", 
+    tags: { enneagram: [7], instinct: ["so", "sx", "sp"] } 
+  },
+  { 
+    text: "I am a charming person who loves the good things in life and good at getting what I want to have fun and feel safe.", 
+    tags: { enneagram: [7], instinct: ["sp", "sx", "so"] } 
+  },
+  { 
+    text: "I care about the people I love fiercely and expect the same loyalty.", 
+    tags: { enneagram: [8], instinct: ["so", "sx"] } 
+  },
+  { 
+    text: "I always feel the need to have control over my environment and can become aggressive otherwise.", 
+    tags: { enneagram: [8], instinct: ["sx", "so", "sp"] } 
+  },
+  { 
+    text: "I am protective of my personal space, resources, and independence.", 
+    tags: { enneagram: [8], instinct: ["sp", "so", "sx"] } 
+  },
+  { 
+    text: "If possible, I would spend the day doing nothing and resting.", 
+    tags: { enneagram: [9], instinct: ["sp", "sx", "so"] } 
+  },
+  { 
+    text: "I am great at listening to what others have to say and I have a lot of patience with them.", 
+    tags: { enneagram: [9], instinct: ["so", "sx", "sp"] } 
+  },
+  { 
+    text: "I am quiet about my needs because I assume that the other person doesn't care or it will burden them.", 
+    tags: { enneagram: [9], instinct: ["sx", "sp", "so"] } 
+  },
 ];
 
 // These are the main variables that keep track of where the quiz is and what scores each type has.
@@ -66,7 +146,7 @@ const instinctLabels = {
   sx: "Sexual"
 };
 
-// This checks all the subtype scores and picks the one that came out highest.
+// This checks all the subtype scores and picks the highest one.
 function getResultSummary() {
     const bestSubtypeEntry = Object.entries(subtypeScores).reduce((best, [subtype, score]) => {
         return score > best.score ? { subtype, score } : best;
@@ -91,7 +171,7 @@ function getResultSummary() {
     };
 }
 
-// This switches the quiz into the finished state so the result card shows up.
+// This switches the quiz into the finished state so that the result card shows up.
 function toggleQuizCompletionState() {
     const beigeBg = document.querySelector('.beige-bg');
     const resultContainer = document.getElementById('quiz-result');
@@ -105,7 +185,7 @@ function toggleQuizCompletionState() {
     }
 }
 
-// This builds the result card with the right image, title, and page link based on the quiz answers.
+// This shows the result with the right image, title, and page link based on the quiz answers.
 function renderResult() {
     const resultContainer = document.getElementById("quiz-result");
     if (!resultContainer) return;
@@ -166,7 +246,7 @@ function applyQuestionScore(q, value) {
     });
 }
 
-// This runs when the page loads so the quiz starts fresh and the first question shows up right away.
+// This runs when the page loads so the quiz shows the first question immediately.
 document.addEventListener("DOMContentLoaded", () => {
     current = 0;
     history = [];
@@ -183,7 +263,7 @@ document.addEventListener("DOMContentLoaded", () => {
     updateProgress();
 });
 
-// This checks for clicks on the answer buttons and records the user's answer for the current question.
+// This checks for clicks on the answer buttons and records the end-user's answer for the current question.
 document.querySelectorAll(".answer-btn").forEach(btn => {
     btn.addEventListener("click", () => {
         // Prevent clicking if quiz is already over
