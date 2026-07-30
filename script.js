@@ -1,4 +1,4 @@
-// This makes the nav links turn active when you click on them.
+// Make the top nav links light up when you click them so it shows to the end user what page they selected.
 const navLinks = document.querySelectorAll('.topnav .nav-links a');
 navLinks.forEach(link => {
     link.addEventListener('click', event => {
@@ -7,7 +7,7 @@ navLinks.forEach(link => {
     });
 });
 
-// This stores all the quiz questions and the type/instinct tags that go with each one.
+// The quiz questions and their enneagram + instinct tags
 const questions = [
   { 
     text: "I like things to feel correct, fair, and well planned.",
@@ -119,14 +119,14 @@ const questions = [
   },
 ];
 
-// These are the main variables that keep track of where the quiz is and what scores each type has.
+// Keeps track of what question the end user is on, scores for each type, instincts, subtypes, and the answer history.
 let current = 0;
 let typeScores = { 1:0, 2:0, 3:0, 4:0, 5:0, 6:0, 7:0, 8:0, 9:0 };
 let instinctScores = { sp:0, so:0, sx:0 };
 let subtypeScores = {};
 let history = [];
 
-// These are the colors for each enneagram type so the result card matches the type pages.
+// Colors for each type so the result card matches the type pages and looks aesthetically pleasing.
 const typeColors = {
   1: "#6e88bf",
   2: "#fed557",
@@ -139,39 +139,68 @@ const typeColors = {
   9: "#fdbf93"
 };
 
-// These turn the short instinct names into words like Social or Sexual.
+// Turn shorthand instincts (so/sp/sx) into full words like "Social" so labels make sense.
 const instinctLabels = {
   so: "Social",
   sp: "Self-preservation",
   sx: "Sexual"
 };
 
-// This checks all the subtype scores and picks the highest one.
+// Pick the Enneagram type with the highest score.
 function getResultSummary() {
-    const bestSubtypeEntry = Object.entries(subtypeScores).reduce((best, [subtype, score]) => {
-        return score > best.score ? { subtype, score } : best;
-    }, { subtype: "so1", score: -Infinity });
+  // Pick the top Enneagram type based on scores.
+  let topType = null;
+  let topTypeScore = -Infinity;
+  Object.entries(typeScores).forEach(([type, score]) => {
+    const numType = Number(type);
+    if (score > topTypeScore || (score === topTypeScore && (topType === null || numType < topType))) {
+      topTypeScore = score;
+      topType = numType;
+    }
+  });
 
-    const subtypeKey = bestSubtypeEntry.subtype;
-    const instinctKey = subtypeKey.replace(/\d+/g, "");
-    const typeNumber = Number(subtypeKey.replace(/[^\d]/g, ""));
-    const instinctName = instinctLabels[instinctKey] || "Social";
-    const resultTitle = `${instinctName} ${typeNumber}`;
-    const pageName = `${instinctKey.toUpperCase()}${typeNumber}.html`;
-    const imagePath = `E${typeNumber}/${instinctKey.toUpperCase()} dom/${instinctKey.toUpperCase()}${typeNumber} description.png`;
-    const accentColor = typeColors[typeNumber] || "#6e88bf";
+  // Recalculate instincts using only answers from questions that include that top type.
+  const filteredInstinctScores = { sp: 0, so: 0, sx: 0 };
+  history.forEach(entry => {
+    const q = questions[entry.questionIndex];
+    if (!q) return;
+    if (q.tags.enneagram.includes(topType)) {
+      q.tags.instinct.forEach(inst => {
+        filteredInstinctScores[inst] = (filteredInstinctScores[inst] || 0) + entry.value;
+      });
+    }
+  });
 
-    return {
-        typeNumber,
-        instinctKey,
-        resultTitle,
-        pageName,
-        imagePath,
-        accentColor
-    };
+  // Choose the instinct with the highest score; if it's a tie, use the priority order.
+  const instinctOrder = ["sp", "so", "sx"];
+  let instinctKey = 'sp';
+  let bestInstScore = -Infinity;
+  instinctOrder.forEach(k => {
+    const s = filteredInstinctScores[k] || 0;
+    if (s > bestInstScore || (s === bestInstScore && instinctOrder.indexOf(k) < instinctOrder.indexOf(instinctKey))) {
+      bestInstScore = s;
+      instinctKey = k;
+    }
+  });
+
+  const typeNumber = topType || 1;
+  const instinctName = instinctLabels[instinctKey] || "Social";
+  const resultTitle = `${instinctName} ${typeNumber}`;
+  const pageName = `${instinctKey.toUpperCase()}${typeNumber}.html`;
+  const imagePath = `E${typeNumber}/${instinctKey.toUpperCase()} dom/${instinctKey.toUpperCase()}${typeNumber} description.png`;
+  const accentColor = typeColors[typeNumber] || "#6e88bf";
+
+  return {
+    typeNumber,
+    instinctKey,
+    resultTitle,
+    pageName,
+    imagePath,
+    accentColor
+  };
 }
 
-// This switches the quiz into the finished state so that the result card shows up.
+// Flip the quiz into finished mode and show the result card.
 function toggleQuizCompletionState() {
     const beigeBg = document.querySelector('.beige-bg');
     const resultContainer = document.getElementById('quiz-result');
@@ -185,7 +214,7 @@ function toggleQuizCompletionState() {
     }
 }
 
-// This shows the result with the right image, title, and page link based on the quiz answers.
+// Show the result card with the right image, title, and a link to the full page.
 function renderResult() {
     const resultContainer = document.getElementById("quiz-result");
     if (!resultContainer) return;
@@ -214,14 +243,14 @@ function renderResult() {
     resultContainer.scrollIntoView({ behavior: "smooth", block: "start" });
 }
 
-// This shows the current question in the quiz box.
+// Show the current question text in the quiz box.
 function showQuestion() {
     if (current < questions.length) {
         document.getElementById("question-text").textContent = questions[current].text;
     }
 }
 
-// This updates the progress bar and the percentage as you answer more questions.
+// Update the progress bar and percent as the user answers questions.
 function updateProgress() {
     const totalQuestions = questions.length;
     // Base progress directly on how many questions have been answered out of total
@@ -230,7 +259,7 @@ function updateProgress() {
     document.querySelector(".progress-percent").textContent = Math.round(progress) + "%";
 }
 
-// When you click one of the answer circles, this adds that value to the right type, instinct, and subtype totals.
+// When an answer button gets clicked, add its value to the matching type/instinct/subtype totals.
 function applyQuestionScore(q, value) {
     q.tags.enneagram.forEach(type => {
         typeScores[type] += value;
@@ -246,7 +275,7 @@ function applyQuestionScore(q, value) {
     });
 }
 
-// This runs when the page loads so the quiz shows the first question immediately.
+// On page load: reset everything and show the first question so the quiz is ready.
 document.addEventListener("DOMContentLoaded", () => {
     current = 0;
     history = [];
@@ -263,7 +292,7 @@ document.addEventListener("DOMContentLoaded", () => {
     updateProgress();
 });
 
-// This checks for clicks on the answer buttons and records the end-user's answer for the current question.
+// Handle clicks on answer buttons and saves the choice, push history, and move to the next question.
 document.querySelectorAll(".answer-btn").forEach(btn => {
     btn.addEventListener("click", () => {
         // Prevent clicking if quiz is already over
@@ -292,7 +321,7 @@ document.querySelectorAll(".answer-btn").forEach(btn => {
     });
 });
 
-// This lets you go back to the last question and undo that answer if the user wants to change it.
+// Back button to undo the last answer and go back one question if the end user made a mistake.
 document.querySelector(".back-btn").addEventListener("click", () => {
     if (current === 0 || history.length === 0) return;
 
