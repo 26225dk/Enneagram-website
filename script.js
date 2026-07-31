@@ -18,7 +18,7 @@ const questions = [
     tags: { enneagram: [1, 5, 6], instinct: ["so", "sp"] } 
   },
   { 
-    text: "I am always bothered because things are not as ethical as they should be.", 
+    text: "I am always bothered because the world is not as fair as it should be.", 
     tags: { enneagram: [1, 2, 6], instinct: ["so", "sp", "sx"] } 
   },
   { 
