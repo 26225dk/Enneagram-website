@@ -117,10 +117,12 @@ body {
 
 .sp7-h1 {
   display: inline-flex;
+  flex-wrap: wrap;
   align-items: baseline;
   justify-content: center;
   gap: 0.2em;
-  white-space: nowrap;
+  max-width: 100%;
+  white-space: normal;
 }
 
 .typesp7-panel {

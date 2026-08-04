@@ -353,7 +353,6 @@ font-family: "Plus Jakarta Sans", sans-serif;
   border: 1.25rem solid var(--accent, #6e88bf);
   border-radius: 1rem;
   overflow: hidden;
-  box-shadow: 0 14px 40px rgba(0, 0, 0, 0.12);
 }
 
 .quiz-result-header {
@@ -443,7 +442,6 @@ font-family: "Plus Jakarta Sans", sans-serif;
 
 .result-open-link:hover {
   transform: translateY(-2px);
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.18);
 }
 
 .beige-bg.quiz-complete .back-btn,
