@@ -185,9 +185,11 @@ function getResultSummary() {
 
   const typeNumber = topType || 1;
   const instinctName = instinctLabels[instinctKey] || "Social";
+
+  //"resultTitle" is a shortened way of making my javascript show the end-user's enneagram type and it changes accordingly depending what result they get. 
   const resultTitle = `${instinctName} ${typeNumber}`;
   const pageName = `${instinctKey.toUpperCase()}${typeNumber}.html`;
-  const imagePath = `E${typeNumber}/${instinctKey.toUpperCase()} dom/${instinctKey.toUpperCase()}${typeNumber} description.png`;
+  const imagePath = `E${typeNumber}/${instinctKey.toUpperCase()} dom/${instinctKey.toUpperCase()}${typeNumber} chibi.png`;
   const accentColor = typeColors[typeNumber] || "#6e88bf";
 
   return {
@@ -200,7 +202,7 @@ function getResultSummary() {
   };
 }
 
-// Flip the quiz into finished mode and show the result card.
+// Show the result card.
 function toggleQuizCompletionState() {
     const beigeBg = document.querySelector('.beige-bg');
     const resultContainer = document.getElementById('quiz-result');
@@ -232,8 +234,10 @@ function renderResult() {
                     <img src="${result.imagePath}" alt="${result.resultTitle} description">
                 </div>
                 <div class="quiz-result-text">
-                    <p class="quiz-result-lead">Your quiz answers point most strongly to ${result.resultTitle}.</p>
-                    <p class="quiz-result-copy">The result below is shown directly from your matching subtype image and styled to match the color-coded type pages.</p>
+                    <p class="quiz-result-lead">You are a ${result.resultTitle}!</p>
+                    <p class="quiz-result-desc"> Strengths:  <br>
+                     Weaknesses: <br>
+                     Recommended Careers: </p>
                     <a class="result-open-link" href="${result.pageName}">Open full result page</a>
                 </div>
             </div>

@@ -420,10 +420,20 @@ font-family: "Plus Jakarta Sans", sans-serif;
 .quiz-result-copy {
   margin: 0;
   font-family: "Press Start 2P", cursive;
-  font-size: 0.8rem;
+  font-size: 1.4rem;
   line-height: 1.8;
   color: #111111;
 }
+
+.quiz-result-desc {
+  margin: 0;
+  font-family: "Press Start 2P", cursive;
+  font-size: 1.1rem;
+  line-height: 1.8;
+  color: #111111;
+}
+
+
 
 .result-open-link {
   display: inline-flex;
