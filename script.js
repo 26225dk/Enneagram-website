@@ -146,51 +146,66 @@ const instinctLabels = {
   sx: "Sexual"
 };
 
-// Pick the Enneagram type with the highest score.
+// A profile for each of the 27 subtype combinations so the quiz can show tailored strengths, weaknesses, and career ideas.
+const subtypeProfiles = {
+  so1: { title: "Social 1", strengths: ["Steady service", "Clear standards", "Responsible leadership"], weaknesses: ["Can be rigid", "Over-responsible", "Critical of self and others"], careers: ["Teacher", "HR manager", "Operations coordinator"] },
+  sp1: { title: "Self-preservation 1", strengths: ["Reliable", "Organized", "Practical"], weaknesses: ["Perfectionistic", "Controlling", "Hard on yourself"], careers: ["Project manager", "Compliance officer", "Quality analyst"] },
+  sx1: { title: "Sexual 1", strengths: ["Passionate", "Focused", "Integrity-driven"], weaknesses: ["Intense", "Judgmental", "Self-denying"], careers: ["Ethics consultant", "Legal researcher", "Healthcare administrator"] },
+
+  so2: { title: "Social 2", strengths: ["Supportive", "Warm", "People-focused"], weaknesses: ["People-pleasing", "Over-giving", "Emotionally dependent"], careers: ["Counselor", "Community manager", "Nonprofit coordinator"] },
+  sp2: { title: "Self-preservation 2", strengths: ["Helpful", "Reliable", "Resourceful"], weaknesses: ["Can feel taken for granted", "Overprotective", "Needs reassurance"], careers: ["Care coordinator", "Customer success lead", "Operations support"] },
+  sx2: { title: "Sexual 2", strengths: ["Magnetic", "Attentive", "Deeply loyal"], weaknesses: ["Can become possessive", "Needs validation", "Emotionally intense"], careers: ["Relationship coach", "Event host", "Brand ambassador"] },
+
+  so3: { title: "Social 3", strengths: ["Confident", "Energetic", "Goal-oriented"], weaknesses: ["Can be image-conscious", "Workaholic", "Avoids vulnerability"], careers: ["Sales manager", "Marketing lead", "Executive assistant"] },
+  sp3: { title: "Self-preservation 3", strengths: ["Efficient", "Adaptable", "Ambitious"], weaknesses: ["Can be status-driven", "Insensitive to rest", "Too competitive"], careers: ["Business analyst", "Operations manager", "Entrepreneur"] },
+  sx3: { title: "Sexual 3", strengths: ["Charismatic", "Competitive", "High-impact"], weaknesses: ["Can seem superficial", "Needs admiration", "Emotionally guarded"], careers: ["Public relations", "Talent recruiter", "Performance marketer"] },
+
+  so4: { title: "Social 4", strengths: ["Expressive", "Emotionally intelligent", "Creative"], weaknesses: ["Can be moody", "Identity-focused", "Self-conscious"], careers: ["Designer", "Writer", "Brand storyteller"] },
+  sp4: { title: "Self-preservation 4", strengths: ["Sensitive", "Original", "Aesthetic"], weaknesses: ["Can isolate", "Self-protective", "Feels misunderstood"], careers: ["Curator", "Interior designer", "Content creator"] },
+  sx4: { title: "Sexual 4", strengths: ["Passionate", "Intense", "Authentic"], weaknesses: ["Can be dramatic", "Highly reactive", "Emotionally consuming"], careers: ["Artist", "Fashion stylist", "Creative director"] },
+
+  so5: { title: "Social 5", strengths: ["Thoughtful", "Observant", "Analytical"], weaknesses: ["Can withdraw", "Overthinks", "Socially detached"], careers: ["Researcher", "Data analyst", "Librarian"] },
+  sp5: { title: "Self-preservation 5", strengths: ["Independent", "Prepared", "Resourceful"], weaknesses: ["Can hoard energy", "Detached", "Avoids dependency"], careers: ["Systems analyst", "Archivist", "Technical specialist"] },
+  sx5: { title: "Sexual 5", strengths: ["Intellectually intense", "Private", "Deeply perceptive"], weaknesses: ["Can be elusive", "Emotionally guarded", "Hard to access"], careers: ["Strategic advisor", "Investigator", "Cybersecurity analyst"] },
+
+  so6: { title: "Social 6", strengths: ["Loyal", "Responsible", "Collaborative"], weaknesses: ["Can be anxious", "Overly cautious", "Needs reassurance"], careers: ["Project coordinator", "Risk analyst", "Community outreach"] },
+  sp6: { title: "Self-preservation 6", strengths: ["Practical", "Prepared", "Dependable"], weaknesses: ["Can be suspicious", "Security-focused", "Over-prepared"], careers: ["Safety coordinator", "Logistics planner", "Operations analyst"] },
+  sx6: { title: "Sexual 6", strengths: ["Protective", "Attentive", "Strong intuition"], weaknesses: ["Can be reactive", "Distrustful", "Highly alert"], careers: ["Security consultant", "Investigative journalist", "Emergency planner"] },
+
+  so7: { title: "Social 7", strengths: ["Optimistic", "Charismatic", "Quick to connect"], weaknesses: ["Can avoid depth", "Distractible", "Overcommits"], careers: ["Event planner", "Travel consultant", "Marketing coordinator"] },
+  sp7: { title: "Self-preservation 7", strengths: ["Adaptable", "Practical", "Resourceful"], weaknesses: ["Can be restless", "Avoids discomfort", "Impulsive"], careers: ["Entrepreneur", "Sales rep", "Business developer"] },
+  sx7: { title: "Sexual 7", strengths: ["Fun-loving", "Flirtatious", "High-energy"], weaknesses: ["Can seem superficial", "Avoids commitment", "Needs stimulation"], careers: ["Lifestyle brand manager", "Social media strategist", "Entertainment producer"] },
+
+  so8: { title: "Social 8", strengths: ["Bold", "Protective", "Decisive"], weaknesses: ["Can be confrontational", "Dominating", "Too forceful"], careers: ["Leadership roles", "Law enforcement", "Operations director"] },
+  sp8: { title: "Self-preservation 8", strengths: ["Strong", "Tactical", "Independent"], weaknesses: ["Can be stubborn", "Angry", "Control-oriented"], careers: ["Security manager", "Construction lead", "Defense contractor"] },
+  sx8: { title: "Sexual 8", strengths: ["Powerful", "Passionate", "Protective"], weaknesses: ["Can be intimidating", "Intense", "Highly reactive"], careers: ["Executive", "Negotiator", "Crisis manager"] },
+
+  so9: { title: "Social 9", strengths: ["Peaceful", "Patient", "Empathetic"], weaknesses: ["Can avoid conflict", "Passive", "Understates needs"], careers: ["Mediator", "Teacher", "Social worker"] },
+  sp9: { title: "Self-preservation 9", strengths: ["Calm", "Steady", "Comforting"], weaknesses: ["Can disengage", "Avoids change", "Comfort-seeking"], careers: ["Caregiver", "Facilities manager", "Wellness coordinator"] },
+  sx9: { title: "Sexual 9", strengths: ["Gentle", "Deeply accepting", "Grounding"], weaknesses: ["Can merge with others", "Avoids boundaries", "Over-accommodating"], careers: ["Therapist", "Mediator", "Community facilitator"] }
+};
+
+// Pick the Enneagram subtype with the highest score and use it to shape the result card.
 function getResultSummary() {
-  // Pick the top Enneagram type based on scores.
-  let topType = null;
-  let topTypeScore = -Infinity;
-  Object.entries(typeScores).forEach(([type, score]) => {
-    const numType = Number(type);
-    if (score > topTypeScore || (score === topTypeScore && (topType === null || numType < topType))) {
-      topTypeScore = score;
-      topType = numType;
+  let bestSubtypeKey = null;
+  let bestSubtypeScore = -Infinity;
+
+  Object.entries(subtypeScores).forEach(([subtypeKey, score]) => {
+    if (score > bestSubtypeScore || (score === bestSubtypeScore && (bestSubtypeKey === null || subtypeKey < bestSubtypeKey))) {
+      bestSubtypeScore = score;
+      bestSubtypeKey = subtypeKey;
     }
   });
 
-  // Recalculate instincts using only answers from questions that include that top type.
-  const filteredInstinctScores = { sp: 0, so: 0, sx: 0 };
-  history.forEach(entry => {
-    const q = questions[entry.questionIndex];
-    if (!q) return;
-    if (q.tags.enneagram.includes(topType)) {
-      q.tags.instinct.forEach(inst => {
-        filteredInstinctScores[inst] = (filteredInstinctScores[inst] || 0) + entry.value;
-      });
-    }
-  });
-
-  // Choose the instinct with the highest score; if it's a tie, use the priority order.
-  const instinctOrder = ["sp", "so", "sx"];
-  let instinctKey = 'sp';
-  let bestInstScore = -Infinity;
-  instinctOrder.forEach(k => {
-    const s = filteredInstinctScores[k] || 0;
-    if (s > bestInstScore || (s === bestInstScore && instinctOrder.indexOf(k) < instinctOrder.indexOf(instinctKey))) {
-      bestInstScore = s;
-      instinctKey = k;
-    }
-  });
-
-  const typeNumber = topType || 1;
+  const subtypeMatch = (bestSubtypeKey || "sp1").match(/^([a-z]+)(\d+)$/i);
+  const instinctKey = subtypeMatch ? subtypeMatch[1].toLowerCase() : "sp";
+  const typeNumber = Number(subtypeMatch ? subtypeMatch[2] : 1);
   const instinctName = instinctLabels[instinctKey] || "Social";
-
-  //"resultTitle" is a shortened way of making my javascript show the end-user's enneagram type and it changes accordingly depending what result they get. 
   const resultTitle = `${instinctName} ${typeNumber}`;
   const pageName = `${instinctKey.toUpperCase()}${typeNumber}.html`;
   const imagePath = `E${typeNumber}/${instinctKey.toUpperCase()} dom/${instinctKey.toUpperCase()}${typeNumber} chibi.png`;
   const accentColor = typeColors[typeNumber] || "#6e88bf";
+  const profile = subtypeProfiles[bestSubtypeKey] || subtypeProfiles[`${instinctKey}${typeNumber}`] || subtypeProfiles.sp1;
 
   return {
     typeNumber,
@@ -198,7 +213,8 @@ function getResultSummary() {
     resultTitle,
     pageName,
     imagePath,
-    accentColor
+    accentColor,
+    profile
   };
 }
 
@@ -222,6 +238,11 @@ function renderResult() {
     if (!resultContainer) return;
 
     const result = getResultSummary();
+    const profile = result.profile || {};
+    const strengthsList = (profile.strengths || []).map(item => `<li>${item}</li>`).join("");
+    const weaknessesList = (profile.weaknesses || []).map(item => `<li>${item}</li>`).join("");
+    const careersList = (profile.careers || []).map(item => `<li>${item}</li>`).join("");
+
     resultContainer.hidden = false;
     resultContainer.innerHTML = `
         <div class="quiz-result-panel" style="--accent:${result.accentColor}">
@@ -235,9 +256,11 @@ function renderResult() {
                 </div>
                 <div class="quiz-result-text">
                     <p class="quiz-result-lead">You are a ${result.resultTitle}!</p>
-                    <p class="quiz-result-desc"> Strengths:  <br>
-                     Weaknesses: <br>
-                     Recommended Careers: </p>
+                    <div class="quiz-result-meta">
+                        <p class="quiz-result-desc"><strong>Strengths:</strong><br>${profile.strengths.join("<br>")}</p>
+                        <p class="quiz-result-desc"><strong>Weaknesses:</strong><br>${profile.weaknesses.join("<br>")}</p>
+                        <p class="quiz-result-desc"><strong>Recommended careers:</strong><br>${profile.careers.join("<br>")}</p>
+                    </div>
                     <a class="result-open-link" href="${result.pageName}">Open full result page</a>
                 </div>
             </div>

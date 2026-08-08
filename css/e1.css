@@ -155,7 +155,7 @@ body {
 
 .description-box,
 .fear-desire-box,
-.instinct-card {
+.instinct-card1 {
   background-color: #ffffff;
   border: 0.35rem solid #6e88bf;
   border-radius: 1rem;
@@ -199,14 +199,14 @@ body {
   color: #1f1f1f;
 }
 
-.instinct-row {
+.instinct-row1 {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 1rem;
   padding: 0 2rem 2rem;
 }
 
-.instinct-card {
+.instinct-card1 {
   min-height: 340px;
   padding: 1.5rem 1rem 1rem;
   display: flex;
@@ -222,12 +222,12 @@ body {
   color: inherit;
 }
 
-.instinct-card:hover {
+.instinct-card1:hover {
   background-color: #dbdbdb;
   transform: translateY(-2px);
 }
 
-.instinct-card h2 {
+.instinct-card1 h2 {
   margin: 0;
   font-family: 'Press Start 2P', cursive;
   font-size: 1.4rem;
@@ -235,7 +235,7 @@ body {
   color: #6e88bf;
 }
 
-.instinct-card img {
+.instinct-card1 img {
   width: min(100%, 220px);
   max-height: 240px;
   object-fit: contain;
@@ -444,7 +444,7 @@ body {
     grid-template-columns: 1fr;
   }
 
-  .instinct-row {
+  .instinct-row1 {
     grid-template-columns: 1fr;
   }
 }

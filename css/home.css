@@ -433,7 +433,11 @@ font-family: "Plus Jakarta Sans", sans-serif;
   color: #111111;
 }
 
-
+.quiz-result-meta {
+  display: flex;
+  flex-direction: column;
+  gap: 0.7rem;
+}
 
 .result-open-link {
   display: inline-flex;
@@ -509,6 +513,10 @@ font-family: "Plus Jakarta Sans", sans-serif;
   display: inline-flex;
   align-items: center;
   gap: 0;
+}
+
+.restart-btn {
+  display: none;
 }
 
 .dropbtn {
