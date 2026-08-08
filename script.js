@@ -7,6 +7,127 @@ navLinks.forEach(link => {
     });
 });
 
+// My search bar 
+const searchEntries = [
+  { label: 'Home', url: 'index.html' },
+  { label: 'More about enneagram', url: 'moreabtennea.html' },
+  { label: 'Resources', url: 'resources.html' },
+  { label: 'E1', url: 'e1.html' },
+  { label: 'E2', url: 'e2.html' },
+  { label: 'E3', url: 'e3.html' },
+  { label: 'E4', url: 'e4.html' },
+  { label: 'E5', url: 'e5.html' },
+  { label: 'E6', url: 'e6.html' },
+  { label: 'E7', url: 'e7.html' },
+  { label: 'E8', url: 'e8.html' },
+  { label: 'E9', url: 'e9.html' },
+  { label: 'SO1', url: 'SO1.html' },
+  { label: 'SO2', url: 'SO2.html' },
+  { label: 'SO3', url: 'SO3.html' },
+  { label: 'SO4', url: 'SO4.html' },
+  { label: 'SO5', url: 'SO5.html' },
+  { label: 'SO6', url: 'SO6.html' },
+  { label: 'SO7', url: 'SO7.html' },
+  { label: 'SO8', url: 'SO8.html' },
+  { label: 'SO9', url: 'SO9.html' },
+  { label: 'SP1', url: 'SP1.html' },
+  { label: 'SP2', url: 'SP2.html' },
+  { label: 'SP3', url: 'SP3.html' },
+  { label: 'SP4', url: 'SP4.html' },
+  { label: 'SP5', url: 'SP5.html' },
+  { label: 'SP6', url: 'SP6.html' },
+  { label: 'SP7', url: 'SP7.html' },
+  { label: 'SP8', url: 'SP8.html' },
+  { label: 'SP9', url: 'SP9.html' },
+  { label: 'SX1', url: 'SX1.html' },
+  { label: 'SX2', url: 'SX2.html' },
+  { label: 'SX3', url: 'SX3.html' },
+  { label: 'SX4', url: 'SX4.html' },
+  { label: 'SX5', url: 'SX5.html' },
+  { label: 'SX6', url: 'SX6.html' },
+  { label: 'SX7', url: 'SX7.html' },
+  { label: 'SX8', url: 'SX8.html' },
+  { label: 'SX9', url: 'SX9.html' }
+];
+
+function normalizeSearchText(value) {
+  return value.toLowerCase().replace(/\s+/g, '').replace(/_/g, '');
+}
+
+function showSearchResults(input, query) {
+  const wrapper = input.parentElement;
+  if (!wrapper) return;
+
+  let results = searchEntries.filter(entry => {
+    const normalizedLabel = normalizeSearchText(entry.label);
+    const normalizedQuery = normalizeSearchText(query);
+    return normalizedLabel.includes(normalizedQuery) || entry.url.toLowerCase().includes(normalizedQuery);
+  });
+
+  if (results.length > 8) {
+    results = results.slice(0, 8);
+  }
+
+  let dropdown = wrapper.querySelector('.search-dropdown');
+  if (!dropdown) {
+    dropdown = document.createElement('div');
+    dropdown.className = 'search-dropdown';
+    dropdown.style.position = 'absolute';
+    dropdown.style.top = 'calc(100% + 0.25rem)';
+    dropdown.style.left = '0';
+    dropdown.style.right = '0';
+    dropdown.style.background = '#ffffff';
+    dropdown.style.border = '1px solid #000000';
+    dropdown.style.boxShadow = 'none';
+    dropdown.style.zIndex = '1000';
+    dropdown.style.maxHeight = '220px';
+    dropdown.style.overflowY = 'auto';
+    dropdown.style.display = 'none';
+    wrapper.style.position = 'relative';
+    wrapper.appendChild(dropdown);
+  }
+
+  if (!query.trim() || results.length === 0) {
+    dropdown.innerHTML = '';
+    dropdown.style.display = 'none';
+    return;
+  }
+
+  dropdown.innerHTML = results.map(entry => `
+    <button type="button" class="search-dropdown-item" data-url="${entry.url}" style="display:block;width:100%;text-align:left;padding:0.7rem 0.8rem;border:none;background:#fff;color:#000;cursor:pointer;font-size:0.95rem;">
+      ${entry.label}
+    </button>
+  `).join('');
+
+  dropdown.style.display = 'block';
+
+  dropdown.querySelectorAll('.search-dropdown-item').forEach(button => {
+    button.addEventListener('click', () => {
+      window.location.href = button.getAttribute('data-url');
+    });
+  });
+}
+
+
+document.querySelectorAll('.topnav input[type="text"]').forEach(input => {
+  input.addEventListener('input', event => {
+    showSearchResults(input, event.target.value);
+  });
+
+  input.addEventListener('focus', () => {
+    showSearchResults(input, input.value);
+  });
+
+  input.addEventListener('blur', () => {
+    setTimeout(() => {
+      const dropdown = input.parentElement?.querySelector('.search-dropdown');
+      if (dropdown) {
+        dropdown.style.display = 'none';
+      }
+    }, 120);
+  });
+});
+
 // The quiz questions and their enneagram + instinct tags
 const questions = [
   { 

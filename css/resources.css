@@ -133,73 +133,141 @@ body {
   display: block;
 }
 
-.beige-bg {
-  background-color: #fff4de;
-  text-align: center;
-  border-radius: 20px;
-  padding: 30px 15px 60px;
-  max-width: min(1200px, calc(100% - 4vw)); /* Makes sure it doesn't exceed the viewport width minus borders */
-  margin: 1rem auto 0;
-  position: relative;
+.resources-page {
   flex: 1;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+.resources-panel {
+  background-color: #fff4de;
+  min-height: calc(100vh - 4.5rem - 2vw - 2rem);
+  border: 0;
+  border-radius: 0;
+  overflow: hidden;
+  box-shadow: none;
+}
+
+.resources-shell {
+  background-color: #fff4de;
+  margin: 0;
+  border: 0;
+  border-radius: 0;
+  min-height: 100%;
+}
+
+.resources-header {
+  background-color: transparent;
+  padding: 2rem 2rem 1.5rem;
+  text-align: center;
+}
+
+.resources-header h1,
+.resource-card h2 {
+  font-family: 'Press Start 2P', cursive;
+}
+
+.resources-header h1 {
+  margin: 0;
+  padding: 2rem 1rem 1.5rem;
+  font-size: clamp(1.6rem, 3vw, 2.6rem);
+  letter-spacing: 0.2em;
+  line-height: 1.2;
+  color: #000000;
+}
+
+.resources-content {
   display: flex;
   flex-direction: column;
-  justify-content: flex-start;
-  gap: 25px;
-  width: 100%;
+  gap: 1.5rem;
+  padding: 0 2rem 2rem;
 }
 
-.white-box {
-  background-color: white;
+.resource-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1.25rem;
+  align-items: stretch;
+}
+
+.resource-card {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  min-height: 280px;
+  padding: 1.25rem;
   border-radius: 20px;
-  padding: 30px 45px;
-  max-width: 100%;
-  width: 90%;
-  margin: 0 auto;
-  flex-shrink: 0;
-}
-
-.questions {
-  text-align: center;
-  font-size: 40px;
-  margin: 0 0 24px;
-  font-family: "Plus Jakarta Sans", sans-serif;
-}
-
-.resource-title {
-  color:#000000;
-  font-family: "Plus Jakarta Sans", sans-serif;
-  margin-bottom: 0;
-}
-
-.resource-file {
   text-decoration: none;
-  color: black;
-  font-family: "Plus Jakarta Sans", sans-serif;
+  color: #000000;
+  background-color: #fff4de;
+  border: 0.35rem solid #000000;
+  box-shadow: none;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 
-.resource-file:visited {
-  color: black;
+.resource-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.08);
+  background-color: #ffe8be;
 }
 
-.thxtheogie {
-    margin-top: 4px;
-    font-family: "Plus Jakarta Sans", sans-serif;
+.resource-number {
+  font-family: 'Press Start 2P', cursive;
+  font-size: 0.7rem;
+  letter-spacing: 0.2em;
+  color: #000000;
 }
 
-.resource-file:hover {
-  text-decoration: none;
- color: #b30b12;
+.resource-card-body {
+  display: flex;
+  flex-direction: column;
+  gap: 0.55rem;
+  align-items: flex-start;
 }
 
-.theogie-link {
-    color: #680101;
-    text-decoration: none;
-    font-family: "Plus Jakarta Sans", sans-serif;
+.resource-card h2 {
+  margin: 0;
+  font-size: 0.95rem;
+  letter-spacing: 0.08em;
+  line-height: 1.4;
 }
 
-.theogie-link:hover {
-    color: #ff1f27;
+.resource-divider {
+  width: 100%;
+  height: 2px;
+  background-color: #000000;
+}
+
+.resource-card p {
+  margin: 0;
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-size: 0.8rem;
+  line-height: 1.5;
+  color: #333333;
+}
+
+.resource-link {
+  margin-top: 0.2rem;
+  font-family: 'Press Start 2P', cursive;
+  font-size: 0.6rem;
+  letter-spacing: 0.12em;
+  color: #000000;
+  text-transform: uppercase;
+}
+
+@media (max-width: 900px) {
+  .resource-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .resource-card {
+    min-height: 240px;
+  }
+
+  .resources-content {
+    padding: 1.25rem;
+  }
 }
 
 
