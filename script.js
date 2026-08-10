@@ -383,6 +383,9 @@ function renderResult() {
                         <p class="quiz-result-desc"><strong>Recommended careers:</strong><br>${profile.careers.join("<br>")}</p>
                     </div>
                     <a class="result-open-link" href="${result.pageName}">Open full result page</a>
+                    <div class="restart-btn">
+                      <button type="button" class="restart-txt" onclick="location.reload()">Restart</button>
+                    <div>
                 </div>
             </div>
         </div>

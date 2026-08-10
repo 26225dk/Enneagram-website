@@ -155,7 +155,7 @@ body {
 }
 
 .description-box-sx8,
-.fear-desire-box,
+.example-box,
 .instinct-card3 {
   background-color: #ffffff;
   border: 0.35rem solid #72070b;
@@ -192,7 +192,7 @@ body {
   color: #1f1f1f;
 }
 
-.fear-desire-box {
+.example-box {
   display: flex;
   flex-direction: column;
   justify-content: space-between;

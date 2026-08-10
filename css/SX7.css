@@ -155,7 +155,7 @@ body {
 }
 
 .description-box-sx7,
-.fear-desire-box {
+.example-box {
   background-color: #ffffff;
   border: 0.35rem solid #920586;
   border-radius: 1rem;
@@ -188,7 +188,7 @@ body {
   color: #1f1f1f;
 }
 
-.fear-desire-box {
+.example-box {
   display: flex;
   flex-direction: column;
   justify-content: space-between;

@@ -113,21 +113,26 @@
         <p class="agree-txt"> Agree </p>
     </div>
     
+    <!-- This keeps the end-user's results page hidden until they complete the quiz -->
 
     <div id="quiz-result" class="quiz-result-card" hidden></div>
 
+     <!-- This button lets the user go back to the previous question if they make a mistake  -->
     <div class="back-btn">
         <p class="back-txt">← Back</p>
     </div>
-    <!-- This button lets the user go back to the previous question if they make a mistake  -->
+   
+    <!-- I placed it here so that it is balanced with the back button otherwise the back button looks out of place and aesthetically unpleasing -->
     <div class="next-btn">
         <p class="next-txt">Next →</p>
     </div>
-    <!-- I placed it here so that it is balanced with the back button otherwise the back button looks out of place and aesthetically unpleasing -->
+    
 
     <div class="restart-btn">
-        <button class="restart-txt" onclick="location.reload()">Restart</button>
+        <button type="button" class="restart-txt" onclick="location.reload()">Restart</button>
     </div>
+
+    <div id="quiz-result" hidden></div>
 </div>
 
 

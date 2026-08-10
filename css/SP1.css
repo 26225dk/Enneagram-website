@@ -164,7 +164,7 @@ body {
 }
 
 .description-box-sp1,
-.fear-desire-box {
+.example-box {
   background-color: #ffffff;
   border: 0.35rem solid #6e88bf;
   border-radius: 1rem;
@@ -190,7 +190,7 @@ body {
   object-fit: contain;
 }
 
-.fear-desire-box {
+.example-box {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
