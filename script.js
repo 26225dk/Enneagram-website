@@ -1,4 +1,4 @@
-// Make the top nav links light up when you click them so it shows to the end user what page they selected.
+// This makes the nav links look active when you click them.
 const navLinks = document.querySelectorAll('.topnav .nav-links a');
 navLinks.forEach(link => {
     link.addEventListener('click', event => {
@@ -7,7 +7,7 @@ navLinks.forEach(link => {
     });
 });
 
-// My search bar 
+// This is the list of pages the search bar can find.
 const searchEntries = [
   { label: 'Home', url: 'index.html' },
   { label: 'More about enneagram', url: 'moreabtennea.html' },
@@ -50,10 +50,12 @@ const searchEntries = [
   { label: 'SX9', url: 'SX9.html' }
 ];
 
+// This cleans the text so the search is easier to match.
 function normalizeSearchText(value) {
   return value.toLowerCase().replace(/\s+/g, '').replace(/_/g, '');
 }
 
+// This checks the search input and shows matching pages in a dropdown.
 function showSearchResults(input, query) {
   const wrapper = input.parentElement;
   if (!wrapper) return;
@@ -63,10 +65,6 @@ function showSearchResults(input, query) {
     const normalizedQuery = normalizeSearchText(query);
     return normalizedLabel.includes(normalizedQuery) || entry.url.toLowerCase().includes(normalizedQuery);
   });
-
-  if (results.length > 8) {
-    results = results.slice(0, 8);
-  }
 
   let dropdown = wrapper.querySelector('.search-dropdown');
   if (!dropdown) {
@@ -108,7 +106,7 @@ function showSearchResults(input, query) {
   });
 }
 
-
+// This makes the search box react live while you type.
 document.querySelectorAll('.topnav input[type="text"]').forEach(input => {
   input.addEventListener('input', event => {
     showSearchResults(input, event.target.value);
@@ -128,7 +126,7 @@ document.querySelectorAll('.topnav input[type="text"]').forEach(input => {
   });
 });
 
-// The quiz questions and their enneagram + instinct tags
+// These are all the quiz questions and the type tags tied to each one.
 const questions = [
   { 
     text: "I like things to feel correct, fair, and well planned.",
@@ -240,14 +238,25 @@ const questions = [
   },
 ];
 
-// Keeps track of what question the end user is on, scores for each type, instincts, subtypes, and the answer history.
+// This keeps track of the quiz progress and all the score totals.
 let current = 0;
 let typeScores = { 1:0, 2:0, 3:0, 4:0, 5:0, 6:0, 7:0, 8:0, 9:0 };
 let instinctScores = { sp:0, so:0, sx:0 };
 let subtypeScores = {};
 let history = [];
 
-// Colors for each type so the result card matches the type pages and looks aesthetically pleasing.
+// This is the answer scale: negative means disagree, positive means agree.
+const answerScale = {
+  stronglyDisagree: -3,
+  disagree: -2,
+  slightlyDisagree: -1,
+  neutral: 0,
+  slightlyAgree: 1,
+  agree: 2,
+  stronglyAgree: 3,
+};
+
+// These colors match each Enneagram type for the result card.
 const typeColors = {
   1: "#6e88bf",
   2: "#fed557",
@@ -260,17 +269,17 @@ const typeColors = {
   9: "#fdbf93"
 };
 
-// Turn shorthand instincts (so/sp/sx) into full words like "Social" so labels make sense.
+// This turns short instinct names into nicer labels like Social and Sexual.
 const instinctLabels = {
   so: "Social",
   sp: "Self-preservation",
   sx: "Sexual"
 };
 
-// A profile for each of the 27 subtype combinations so the quiz can show tailored strengths, weaknesses, and career ideas.
+// These are the little profile cards for each subtype combo.
 const subtypeProfiles = {
   so1: { title: "Social 1", strengths: ["Steady service", "Clear standards", "Responsible leadership"], weaknesses: ["Can be rigid", "Over-responsible", "Critical of self and others"], careers: ["Teacher", "HR manager", "Operations coordinator"] },
-  sp1: { title: "Self-preservation 1", strengths: ["Reliable", "Organized", "Practical"], weaknesses: ["Perfectionistic", "Controlling", "Hard on yourself"], careers: ["Project manager", "Compliance officer", "Quality analyst"] },
+  sp1: { title: "Self-preservation 1", strengths: ["Reliable", "Organized", "Practical"], weaknesses: ["Perfectionistic", "Controlling", "Hard on themselves"], careers: ["Project manager", "Compliance officer", "Quality analyst"] },
   sx1: { title: "Sexual 1", strengths: ["Passionate", "Focused", "Integrity-driven"], weaknesses: ["Intense", "Judgmental", "Self-denying"], careers: ["Ethics consultant", "Legal researcher", "Healthcare administrator"] },
 
   so2: { title: "Social 2", strengths: ["Supportive", "Warm", "People-focused"], weaknesses: ["People-pleasing", "Over-giving", "Emotionally dependent"], careers: ["Counselor", "Community manager", "Nonprofit coordinator"] },
@@ -302,11 +311,11 @@ const subtypeProfiles = {
   sx8: { title: "Sexual 8", strengths: ["Powerful", "Passionate", "Protective"], weaknesses: ["Can be intimidating", "Intense", "Highly reactive"], careers: ["Executive", "Negotiator", "Crisis manager"] },
 
   so9: { title: "Social 9", strengths: ["Peaceful", "Patient", "Empathetic"], weaknesses: ["Can avoid conflict", "Passive", "Understates needs"], careers: ["Mediator", "Teacher", "Social worker"] },
-  sp9: { title: "Self-preservation 9", strengths: ["Calm", "Steady", "Comforting"], weaknesses: ["Can disengage", "Avoids change", "Comfort-seeking"], careers: ["Caregiver", "Facilities manager", "Wellness coordinator"] },
+  sp9: { title: "Self-preservation 9", strengths: ["Calm", "Steady", "Comforting"], weaknesses: ["Disengages with people/surroundings", "Avoids change", "Comfort-seeking"], careers: ["Caregiver", "I.T./technology", "Wellness coordinator"] },
   sx9: { title: "Sexual 9", strengths: ["Gentle", "Deeply accepting", "Grounding"], weaknesses: ["Can merge with others", "Avoids boundaries", "Over-accommodating"], careers: ["Therapist", "Mediator", "Community facilitator"] }
 };
 
-// Pick the Enneagram subtype with the highest score and use it to shape the result card.
+// This picks the winner and builds the final result title and page link.
 function getResultSummary() {
   let bestSubtypeKey = null;
   let bestSubtypeScore = -Infinity;
@@ -339,7 +348,7 @@ function getResultSummary() {
   };
 }
 
-// Show the result card.
+// This shows or hides the result card when the quiz is done.
 function toggleQuizCompletionState() {
     const beigeBg = document.querySelector('.beige-bg');
     const resultContainer = document.getElementById('quiz-result');
@@ -353,7 +362,7 @@ function toggleQuizCompletionState() {
     }
 }
 
-// Show the result card with the right image, title, and a link to the full page.
+// This builds the final result box with the image, strengths, and page link.
 function renderResult() {
     const resultContainer = document.getElementById("quiz-result");
     if (!resultContainer) return;
@@ -382,10 +391,10 @@ function renderResult() {
                         <p class="quiz-result-desc"><strong>Weaknesses:</strong><br>${profile.weaknesses.join("<br>")}</p>
                         <p class="quiz-result-desc"><strong>Recommended careers:</strong><br>${profile.careers.join("<br>")}</p>
                     </div>
-                    <a class="result-open-link" href="${result.pageName}">Open full result page</a>
-                    <div class="restart-btn">
-                      <button type="button" class="restart-txt" onclick="location.reload()">Restart</button>
-                    <div>
+                    <div class="result-actions">
+                        <a class="result-open-link" href="${result.pageName}">Open full result page</a>
+                        <button type="button" class="retake-btn" onclick="location.reload()">Retake quiz</button>
+                    </div>
                 </div>
             </div>
         </div>
@@ -394,14 +403,14 @@ function renderResult() {
     resultContainer.scrollIntoView({ behavior: "smooth", block: "start" });
 }
 
-// Show the current question text in the quiz box.
+// This puts the current question on screen.
 function showQuestion() {
     if (current < questions.length) {
         document.getElementById("question-text").textContent = questions[current].text;
     }
 }
 
-// Update the progress bar and percent as the user answers questions.
+// This updates the progress bar based on how many answers are done.
 function updateProgress() {
     const totalQuestions = questions.length;
     // Base progress directly on how many questions have been answered out of total
@@ -410,23 +419,34 @@ function updateProgress() {
     document.querySelector(".progress-percent").textContent = Math.round(progress) + "%";
 }
 
-// When an answer button gets clicked, add its value to the matching type/instinct/subtype totals.
+function normalizeAnswerValue(value) {
+    const numericValue = Number(value);
+    if (!Number.isFinite(numericValue)) return 0;
+    return Math.max(-3, Math.min(3, numericValue));
+}
+
+// This adds the selected score to the matching type and instinct totals.
 function applyQuestionScore(q, value) {
+    const normalizedValue = normalizeAnswerValue(value);
+    const typeShare = q.tags.enneagram.length ? normalizedValue / q.tags.enneagram.length : 0;
+    const instinctShare = q.tags.instinct.length ? normalizedValue / q.tags.instinct.length : 0;
+    const subtypeShare = q.tags.enneagram.length && q.tags.instinct.length ? normalizedValue / (q.tags.enneagram.length * q.tags.instinct.length) : 0;
+
     q.tags.enneagram.forEach(type => {
-        typeScores[type] += value;
+        typeScores[type] += typeShare;
     });
     q.tags.instinct.forEach(inst => {
-        instinctScores[inst] += value;
+        instinctScores[inst] += instinctShare;
     });
     q.tags.enneagram.forEach(type => {
         q.tags.instinct.forEach(inst => {
             const subtypeKey = `${inst}${type}`;
-            subtypeScores[subtypeKey] = (subtypeScores[subtypeKey] || 0) + value;
+            subtypeScores[subtypeKey] = (subtypeScores[subtypeKey] || 0) + subtypeShare;
         });
     });
 }
 
-// On page load: reset everything and show the first question so the quiz is ready.
+// This resets the quiz when the page loads and starts at question 1.
 document.addEventListener("DOMContentLoaded", () => {
     current = 0;
     history = [];
@@ -443,19 +463,19 @@ document.addEventListener("DOMContentLoaded", () => {
     updateProgress();
 });
 
-// Handle clicks on answer buttons and saves the choice, push history, and move to the next question.
+// This listens for answer clicks, saves the score, and moves to the next question.
 document.querySelectorAll(".answer-btn").forEach(btn => {
     btn.addEventListener("click", () => {
         // Prevent clicking if quiz is already over
         if (current >= questions.length) return;
 
-        const value = Number(btn.dataset.value);
+        const value = normalizeAnswerValue(btn.dataset.value ?? answerScale[btn.classList[1]] ?? 0);
         const q = questions[current];
-        
+
         applyQuestionScore(q, value);
         history.push({ questionIndex: current, value });
-        
-        current++; 
+
+        current++;
 
         if (current === questions.length) {
             document.querySelector(".progress-bar-fill").style.width = "100%";
@@ -472,7 +492,7 @@ document.querySelectorAll(".answer-btn").forEach(btn => {
     });
 });
 
-// Back button to undo the last answer and go back one question if the end user made a mistake.
+// This lets the user undo the last answer if they made a mistake.
 document.querySelector(".back-btn").addEventListener("click", () => {
     if (current === 0 || history.length === 0) return;
 

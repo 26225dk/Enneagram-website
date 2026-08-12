@@ -439,11 +439,22 @@ font-family: "Plus Jakarta Sans", sans-serif;
   gap: 0.7rem;
 }
 
-.result-open-link {
+.result-actions {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0.9rem;
+  width: 100%;
+}
+
+.result-open-link,
+.retake-btn {
   display: inline-flex;
   align-items: center;
   justify-content: center;
   width: fit-content;
+  min-width: 220px;
   padding: 0.75rem 1.1rem;
   border-radius: 999px;
   background-color: var(--accent, #6e88bf);
@@ -451,11 +462,18 @@ font-family: "Plus Jakarta Sans", sans-serif;
   text-decoration: none;
   font-family: "Press Start 2P", cursive;
   font-size: 0.75rem;
+  border: none;
+  cursor: pointer;
   transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 
-.result-open-link:hover {
+.result-open-link:hover,
+.retake-btn:hover {
   transform: translateY(-2px);
+}
+
+.retake-btn {
+  background-color: #111111;
 }
 
 .beige-bg.quiz-complete .back-btn,
@@ -517,6 +535,12 @@ font-family: "Plus Jakarta Sans", sans-serif;
 
 .restart-btn {
   display: none;
+}
+
+.search-dropdown {
+  max-height: 240px;
+  overflow-y: auto;
+  overflow-x: hidden;
 }
 
 .dropbtn {
