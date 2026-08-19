@@ -9,6 +9,8 @@ e8 color: #b30b12
 e9 color: #fdbf93 */
 
 
+@import url("responsive.css");
+
 html {
   box-sizing: border-box;
   min-height: 100%;

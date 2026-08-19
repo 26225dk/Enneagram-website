@@ -1,0 +1,195 @@
+/* Shared layout adjustments for phones and tablets. */
+
+@media (max-width: 1000px) {
+  html,
+  body {
+    max-width: 100%;
+  }
+
+  .topnav {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 0.75rem;
+    padding: 0.75rem 1rem;
+  }
+
+  .enneagram-logo {
+    align-self: center;
+  }
+
+  .enneagram-text {
+    text-align: center;
+  }
+
+  .nav-links {
+    width: 100%;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 0.35rem;
+    margin-left: 0;
+  }
+
+  .nav-links a {
+    padding: 0.55rem 0.45rem;
+    font-size: 0.85rem;
+  }
+
+  .nav-links input,
+  .topnav input[type="text"] {
+    flex: 1 1 100%;
+    width: 100%;
+    min-width: 0;
+    max-width: none;
+    margin-top: 0.25rem;
+  }
+
+  .dropdown-content {
+    min-width: min(300px, calc(100vw - 2rem));
+    max-width: calc(100vw - 2rem);
+    left: 50%;
+    transform: translateX(-50%);
+  }
+
+  .info-layout,
+  .instinct-row1,
+  .resource-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .info-layout,
+  .instinct-row1 {
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+
+  .resources-content {
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+
+  .description-box,
+  .example-box {
+    min-width: 0;
+    padding: 1.25rem;
+  }
+
+  .type1-header h1,
+  [class*="-header"] h1 {
+    font-size: clamp(1.35rem, 7vw, 2.5rem);
+    letter-spacing: 0.08em;
+    overflow-wrap: anywhere;
+  }
+
+  img {
+    max-width: 100%;
+    height: auto;
+  }
+}
+
+@media (max-width: 640px) {
+  body {
+    border-width: 0.5rem;
+  }
+
+  .topnav {
+    min-height: auto;
+  }
+
+  .dropdown-content {
+    position: fixed;
+    top: auto;
+    margin-top: 0.5rem;
+  }
+
+  .white-q {
+    width: 100%;
+    min-height: 220px;
+    max-height: none;
+    padding: 1.5rem 1rem;
+  }
+
+  .questions {
+    font-size: clamp(1.35rem, 7vw, 2rem);
+    line-height: 1.35;
+  }
+
+  .progress-info {
+    font-size: 0.95rem;
+  }
+
+  .answer-btns {
+    gap: 0.5rem;
+    margin-top: 1.25rem;
+  }
+
+  .answer-btn,
+  .answer-btn.strongly-disagree,
+  .answer-btn.strongly-agree {
+    width: 3.6rem;
+    height: 3.6rem;
+  }
+
+  .answer-btn.disagree,
+  .answer-btn.agree {
+    width: 3.25rem;
+    height: 3.25rem;
+  }
+
+  .answer-btn.slightly-disagree,
+  .answer-btn.slightly-agree {
+    width: 2.9rem;
+    height: 2.9rem;
+  }
+
+  .answer-btn.neutral {
+    width: 2.5rem;
+    height: 2.5rem;
+  }
+
+  .disagree-txt,
+  .agree-txt {
+    width: 100%;
+    margin: 0;
+    font-size: 1rem;
+  }
+
+  .back-btn,
+  .next-btn {
+    position: static;
+    width: fit-content;
+    margin: 0.5rem auto;
+  }
+
+  .beige-bg {
+    max-width: calc(100% - 1rem);
+    padding: 1rem 0.5rem 2rem;
+  }
+
+  .quiz-result-panel {
+    border-width: 0.6rem;
+  }
+
+  .quiz-result-body,
+  .quiz-result-text {
+    padding: 0.85rem;
+  }
+
+  .quiz-result-lead,
+  .quiz-result-copy {
+    font-size: 0.9rem;
+    line-height: 1.6;
+  }
+
+  .quiz-result-desc {
+    font-size: 0.8rem;
+    line-height: 1.6;
+  }
+
+  .resource-card {
+    min-height: 0;
+  }
+
+  .resource-card h2 {
+    font-size: 1.25rem;
+  }
+}

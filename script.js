@@ -9,45 +9,81 @@ navLinks.forEach(link => {
 
 // This is the list of pages the search bar can find.
 const searchEntries = [
-  { label: 'Home', url: 'index.html' },
+  { label: 'Home', url: 'home.html' },
   { label: 'More about enneagram', url: 'moreabtennea.html' },
   { label: 'Resources', url: 'resources.html' },
   { label: 'E1', url: 'e1.html' },
+  { label: 'Enneagram 1', url: 'e1.html' },
   { label: 'E2', url: 'e2.html' },
+  { label: 'Enneagram 2', url: 'e2.html' },
   { label: 'E3', url: 'e3.html' },
+  { label: 'Enneagram 3', url: 'e3.html' },
   { label: 'E4', url: 'e4.html' },
+  { label: 'Enneagram 4', url: 'e4.html' },
   { label: 'E5', url: 'e5.html' },
+  { label: 'Enneagram 5', url: 'e5.html' },
   { label: 'E6', url: 'e6.html' },
+  { label: 'Enneagram 6', url: 'e6.html' },
   { label: 'E7', url: 'e7.html' },
+  { label: 'Enneagram 7', url: 'e7.html' },
   { label: 'E8', url: 'e8.html' },
+  { label: 'Enneagram 8', url: 'e8.html' },
   { label: 'E9', url: 'e9.html' },
+  { label: 'Enneagram 9', url: 'e9.html' },
   { label: 'SO1', url: 'SO1.html' },
+  { label: 'Social One', url: 'SO1.html' },
   { label: 'SO2', url: 'SO2.html' },
+  { label: 'Social Two', url: 'SO2.html' },
   { label: 'SO3', url: 'SO3.html' },
+  { label: 'Social Three', url: 'SO3.html' },
   { label: 'SO4', url: 'SO4.html' },
+  { label: 'Social Four', url: 'SO4.html' },
   { label: 'SO5', url: 'SO5.html' },
+  { label: 'Social Five', url: 'SO5.html' },
   { label: 'SO6', url: 'SO6.html' },
+  { label: 'Social Six', url: 'SO6.html' },
   { label: 'SO7', url: 'SO7.html' },
+  { label: 'Social Seven', url: 'SO7.html' },
   { label: 'SO8', url: 'SO8.html' },
+  { label: 'Social Eight', url: 'SO8.html' },
   { label: 'SO9', url: 'SO9.html' },
+  { label: 'Social Nine', url: 'SO9.html' },
   { label: 'SP1', url: 'SP1.html' },
+  { label: 'Self-preservation One', url: 'SP1.html' },
   { label: 'SP2', url: 'SP2.html' },
+  { label: 'Self-preservation Two', url: 'SP2.html' },
   { label: 'SP3', url: 'SP3.html' },
+  { label: 'Self-preservation Three', url: 'SP3.html' },
   { label: 'SP4', url: 'SP4.html' },
+  { label: 'Self-preservation Four', url: 'SP4.html' },
   { label: 'SP5', url: 'SP5.html' },
+  { label: 'Self-preservation Five', url: 'SP5.html' },
   { label: 'SP6', url: 'SP6.html' },
+  { label: 'Self-preservation Six', url: 'SP6.html' },
   { label: 'SP7', url: 'SP7.html' },
+  { label: 'Self-preservation Seven', url: 'SP7.html' },  
   { label: 'SP8', url: 'SP8.html' },
+  { label: 'Self-preservation Eight', url: 'SP8.html' },
   { label: 'SP9', url: 'SP9.html' },
+  { label: 'Self-preservation Nine', url: 'SP9.html' },
   { label: 'SX1', url: 'SX1.html' },
+  { label: 'Sexual One', url: 'SX1.html' },
   { label: 'SX2', url: 'SX2.html' },
+  { label: 'Sexual Two', url: 'SX2.html' },
   { label: 'SX3', url: 'SX3.html' },
+  { label: 'Sexual Three', url: 'SX3.html' },
   { label: 'SX4', url: 'SX4.html' },
+  { label: 'Sexual Four', url: 'SX4.html' },
   { label: 'SX5', url: 'SX5.html' },
+  { label: 'Sexual Five', url: 'SX5.html' },
   { label: 'SX6', url: 'SX6.html' },
+  { label: 'Sexual Six', url: 'SX6.html' },
   { label: 'SX7', url: 'SX7.html' },
+  { label: 'Sexual Seven', url: 'SX7.html' },
   { label: 'SX8', url: 'SX8.html' },
-  { label: 'SX9', url: 'SX9.html' }
+  { label: 'Sexual Eight', url: 'SX8.html' },
+  { label: 'SX9', url: 'SX9.html' },
+  { label: 'Sexual Nine', url: 'SX9.html' }
 ];
 
 // This cleans the text so the search is easier to match.
@@ -182,7 +218,7 @@ const questions = [
   },
   { 
     text: "I spend a lot of my free time learning new things to gain more knowledge, even if these topics won't be useful in practice.", 
-    tags: { enneagram: [5], instinct: ["so", "sp", "sx"] } 
+    tags: { enneagram: [5], instinct: ["sp", "so", "sx"] } 
   },
   { 
     text: "I'm independent and keep my distance, but I yearn for a soulmate who can understand me without draining too much of my energy.", 
@@ -226,7 +262,7 @@ const questions = [
   },
   { 
     text: "If possible, I would spend the day doing nothing and resting.", 
-    tags: { enneagram: [9], instinct: ["sp", "sx", "so"] } 
+    tags: { enneagram: [9], instinct: ["sp", "sx"] } 
   },
   { 
     text: "I am great at listening to what others have to say and I have a lot of patience with them.", 
@@ -234,7 +270,7 @@ const questions = [
   },
   { 
     text: "I am quiet about my needs because I assume that the other person doesn't care or it will burden them.", 
-    tags: { enneagram: [9], instinct: ["sx", "sp", "so"] } 
+    tags: { enneagram: [9], instinct: ["sx", "sp"] } 
   },
 ];
 
@@ -278,40 +314,40 @@ const instinctLabels = {
 
 // These are the little profile cards for each subtype combo.
 const subtypeProfiles = {
-  so1: { title: "Social 1", strengths: ["Steady service", "Clear standards", "Responsible leadership"], weaknesses: ["Can be rigid", "Over-responsible", "Critical of self and others"], careers: ["Teacher", "HR manager", "Operations coordinator"] },
-  sp1: { title: "Self-preservation 1", strengths: ["Reliable", "Organized", "Practical"], weaknesses: ["Perfectionistic", "Controlling", "Hard on themselves"], careers: ["Project manager", "Compliance officer", "Quality analyst"] },
-  sx1: { title: "Sexual 1", strengths: ["Passionate", "Focused", "Integrity-driven"], weaknesses: ["Intense", "Judgmental", "Self-denying"], careers: ["Ethics consultant", "Legal researcher", "Healthcare administrator"] },
+  so1: { title: "Social 1", strengths: ["Steady service", "Clear standards", "Responsible leadership"], weaknesses: ["Can be rigid", "Over-responsible", "Critical of self and others"], careers: ["Teacher", "Lawyer", "Judge"] },
+  sp1: { title: "Self-preservation 1", strengths: ["Reliable", "Organized", "Practical"], weaknesses: ["Perfectionistic", "Controlling", "Hard on themselves"], careers: ["Accounting", "Systems administrator", "Quality assurance specialist"] },
+  sx1: { title: "Sexual 1", strengths: ["Passionate", "Focused", "Integrity-driven"], weaknesses: ["Intense", "Judgmental", "Self-denying"], careers: ["Civil rights lawyer", "Life/Leadership Coaching", "Therapist", "Nonprofit leader"] },
 
-  so2: { title: "Social 2", strengths: ["Supportive", "Warm", "People-focused"], weaknesses: ["People-pleasing", "Over-giving", "Emotionally dependent"], careers: ["Counselor", "Community manager", "Nonprofit coordinator"] },
-  sp2: { title: "Self-preservation 2", strengths: ["Helpful", "Reliable", "Resourceful"], weaknesses: ["Can feel taken for granted", "Overprotective", "Needs reassurance"], careers: ["Care coordinator", "Customer success lead", "Operations support"] },
-  sx2: { title: "Sexual 2", strengths: ["Magnetic", "Attentive", "Deeply loyal"], weaknesses: ["Can become possessive", "Needs validation", "Emotionally intense"], careers: ["Relationship coach", "Event host", "Brand ambassador"] },
+  so2: { title: "Social 2", strengths: ["Supportive", "Warm", "People-focused"], weaknesses: ["People-pleasing", "Over-giving", "Emotionally dependent"], careers: ["Counselor", "School counselor", "Community outreach coordinator"] },
+  sp2: { title: "Self-preservation 2", strengths: ["Helpful", "Reliable", "Resourceful"], weaknesses: ["Can feel taken for granted", "Overprotective", "Needs reassurance"], careers: ["Care coordinator", "Nurse aide", "Office manager"] },
+  sx2: { title: "Sexual 2", strengths: ["Magnetic", "Attentive", "Deeply loyal"], weaknesses: ["Can become possessive", "Needs validation", "Emotionally intense"], careers: ["Relationship coach", "Event planner", "Brand ambassador"] },
 
-  so3: { title: "Social 3", strengths: ["Confident", "Energetic", "Goal-oriented"], weaknesses: ["Can be image-conscious", "Workaholic", "Avoids vulnerability"], careers: ["Sales manager", "Marketing lead", "Executive assistant"] },
-  sp3: { title: "Self-preservation 3", strengths: ["Efficient", "Adaptable", "Ambitious"], weaknesses: ["Can be status-driven", "Insensitive to rest", "Too competitive"], careers: ["Business analyst", "Operations manager", "Entrepreneur"] },
-  sx3: { title: "Sexual 3", strengths: ["Charismatic", "Competitive", "High-impact"], weaknesses: ["Can seem superficial", "Needs admiration", "Emotionally guarded"], careers: ["Public relations", "Talent recruiter", "Performance marketer"] },
+  so3: { title: "Social 3", strengths: ["Confident", "Energetic", "Goal-oriented"], weaknesses: ["Can be image-conscious", "Workaholic", "Avoids vulnerability"], careers: ["Sales representative", "Marketing specialist", "Executive assistant"] },
+  sp3: { title: "Self-preservation 3", strengths: ["Efficient", "Adaptable", "Ambitious"], weaknesses: ["Can be status-driven", "Insensitive to rest", "Too competitive"], careers: ["Business analyst", "Operations manager", "Recruiter"] },
+  sx3: { title: "Sexual 3", strengths: ["Charismatic", "Competitive", "High-impact"], weaknesses: ["Can seem superficial", "Needs admiration", "Emotionally guarded"], careers: ["Public relations specialist", "Sales manager", "Recruitment consultant"] },
 
-  so4: { title: "Social 4", strengths: ["Expressive", "Emotionally intelligent", "Creative"], weaknesses: ["Can be moody", "Identity-focused", "Self-conscious"], careers: ["Designer", "Writer", "Brand storyteller"] },
-  sp4: { title: "Self-preservation 4", strengths: ["Sensitive", "Original", "Aesthetic"], weaknesses: ["Can isolate", "Self-protective", "Feels misunderstood"], careers: ["Curator", "Interior designer", "Content creator"] },
+  so4: { title: "Social 4", strengths: ["Expressive", "Emotionally intelligent", "Creative"], weaknesses: ["Can be moody", "Identity-focused", "Self-conscious"], careers: ["Writer", "Graphic designer", "Creative director"] },
+  sp4: { title: "Self-preservation 4", strengths: ["Sensitive", "Original", "Aesthetic"], weaknesses: ["Can isolate", "Self-protective", "Feels misunderstood"], careers: ["Interior designer", "Photographer", "Content creator"] },
   sx4: { title: "Sexual 4", strengths: ["Passionate", "Intense", "Authentic"], weaknesses: ["Can be dramatic", "Highly reactive", "Emotionally consuming"], careers: ["Artist", "Fashion stylist", "Creative director"] },
 
   so5: { title: "Social 5", strengths: ["Thoughtful", "Observant", "Analytical"], weaknesses: ["Can withdraw", "Overthinks", "Socially detached"], careers: ["Researcher", "Data analyst", "Librarian"] },
-  sp5: { title: "Self-preservation 5", strengths: ["Independent", "Prepared", "Resourceful"], weaknesses: ["Can hoard energy", "Detached", "Avoids dependency"], careers: ["Systems analyst", "Archivist", "Technical specialist"] },
+  sp5: { title: "Self-preservation 5", strengths: ["Independent", "Prepared", "Resourceful"], weaknesses: ["Can hoard energy", "Detached", "Avoids dependency"], careers: ["Systems analyst", "Technical support specialist", "Archivist"] },
   sx5: { title: "Sexual 5", strengths: ["Intellectually intense", "Private", "Deeply perceptive"], weaknesses: ["Can be elusive", "Emotionally guarded", "Hard to access"], careers: ["Strategic advisor", "Investigator", "Cybersecurity analyst"] },
 
-  so6: { title: "Social 6", strengths: ["Loyal", "Responsible", "Collaborative"], weaknesses: ["Can be anxious", "Overly cautious", "Needs reassurance"], careers: ["Project coordinator", "Risk analyst", "Community outreach"] },
-  sp6: { title: "Self-preservation 6", strengths: ["Practical", "Prepared", "Dependable"], weaknesses: ["Can be suspicious", "Security-focused", "Over-prepared"], careers: ["Safety coordinator", "Logistics planner", "Operations analyst"] },
-  sx6: { title: "Sexual 6", strengths: ["Protective", "Attentive", "Strong intuition"], weaknesses: ["Can be reactive", "Distrustful", "Highly alert"], careers: ["Security consultant", "Investigative journalist", "Emergency planner"] },
+  so6: { title: "Social 6", strengths: ["Loyal", "Responsible", "Collaborative"], weaknesses: ["Can be anxious", "Overly cautious", "Needs reassurance"], careers: ["Project coordinator", "Risk analyst", "Police officer"] },
+  sp6: { title: "Self-preservation 6", strengths: ["Practical", "Prepared", "Dependable"], weaknesses: ["Can be suspicious", "Security-focused", "Over-prepared"], careers: ["Logistics coordinator", "Safety specialist", "Operations analyst"] },
+  sx6: { title: "Sexual 6", strengths: ["Protective", "Attentive", "Strong intuition"], weaknesses: ["Can be reactive", "Distrustful", "Highly alert"], careers: ["Security consultant", "Emergency planner", "Investigative journalist"] },
 
-  so7: { title: "Social 7", strengths: ["Optimistic", "Charismatic", "Quick to connect"], weaknesses: ["Can avoid depth", "Distractible", "Overcommits"], careers: ["Event planner", "Travel consultant", "Marketing coordinator"] },
-  sp7: { title: "Self-preservation 7", strengths: ["Adaptable", "Practical", "Resourceful"], weaknesses: ["Can be restless", "Avoids discomfort", "Impulsive"], careers: ["Entrepreneur", "Sales rep", "Business developer"] },
-  sx7: { title: "Sexual 7", strengths: ["Fun-loving", "Flirtatious", "High-energy"], weaknesses: ["Can seem superficial", "Avoids commitment", "Needs stimulation"], careers: ["Lifestyle brand manager", "Social media strategist", "Entertainment producer"] },
+  so7: { title: "Social 7", strengths: ["Optimistic", "Charismatic", "Quick to connect"], weaknesses: ["Can avoid depth", "Distractible", "Overcommits"], careers: ["Event planner", "Travel agent", "Marketing coordinator"] },
+  sp7: { title: "Self-preservation 7", strengths: ["Adaptable", "Practical", "Resourceful"], weaknesses: ["Can be restless", "Avoids discomfort", "Impulsive"], careers: ["Sales representative", "Business developer", "Entrepreneur"] },
+  sx7: { title: "Sexual 7", strengths: ["Fun-loving", "Flirtatious", "High-energy"], weaknesses: ["Can seem superficial", "Avoids commitment", "Needs stimulation"], careers: ["Social media manager", "Event producer", "Travel host"] },
 
-  so8: { title: "Social 8", strengths: ["Bold", "Protective", "Decisive"], weaknesses: ["Can be confrontational", "Dominating", "Too forceful"], careers: ["Leadership roles", "Law enforcement", "Operations director"] },
-  sp8: { title: "Self-preservation 8", strengths: ["Strong", "Tactical", "Independent"], weaknesses: ["Can be stubborn", "Angry", "Control-oriented"], careers: ["Security manager", "Construction lead", "Defense contractor"] },
+  so8: { title: "Social 8", strengths: ["Bold", "Protective", "Decisive"], weaknesses: ["Can be confrontational", "Dominating", "Too forceful"], careers: ["Manager", "Law enforcement officer", "Operations director"] },
+  sp8: { title: "Self-preservation 8", strengths: ["Strong", "Tactical", "Independent"], weaknesses: ["Can be stubborn", "Angry", "Control-oriented"], careers: ["Security manager", "Construction supervisor", "Logistics manager"] },
   sx8: { title: "Sexual 8", strengths: ["Powerful", "Passionate", "Protective"], weaknesses: ["Can be intimidating", "Intense", "Highly reactive"], careers: ["Executive", "Negotiator", "Crisis manager"] },
 
   so9: { title: "Social 9", strengths: ["Peaceful", "Patient", "Empathetic"], weaknesses: ["Can avoid conflict", "Passive", "Understates needs"], careers: ["Mediator", "Teacher", "Social worker"] },
-  sp9: { title: "Self-preservation 9", strengths: ["Calm", "Steady", "Comforting"], weaknesses: ["Disengages with people/surroundings", "Avoids change", "Comfort-seeking"], careers: ["Caregiver", "I.T./technology", "Wellness coordinator"] },
+  sp9: { title: "Self-preservation 9", strengths: ["Calm", "Steady", "Comforting"], weaknesses: ["Disengages with people/surroundings", "Avoids change", "Comfort-seeking"], careers: ["Librarian", "Customer service manager", "Accountant"] },
   sx9: { title: "Sexual 9", strengths: ["Gentle", "Deeply accepting", "Grounding"], weaknesses: ["Can merge with others", "Avoids boundaries", "Over-accommodating"], careers: ["Therapist", "Mediator", "Community facilitator"] }
 };
 

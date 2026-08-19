@@ -9,6 +9,8 @@ e8 color: #b30b12
 e9 color: #fdbf93 */
 
 
+@import url("responsive.css");
+
 html {
   box-sizing: border-box;
   min-height: 100%;
@@ -28,6 +30,7 @@ body {
   overflow-y: auto;
   display: flex;
   flex-direction: column;
+  background-color: #fdbf93;
 }
 
 .nav-header {
@@ -90,14 +93,14 @@ body {
 .nav-links input {
   padding: 0.65rem 1rem;
   border-radius: 999px;
-  border: 1px solid rgba(255, 255, 255, 0.25);
-  background-color: rgba(255, 255, 255, 0.08);
+  border: 1px solid #ffffff;
+  background-color: #ffffff;
   color: #ffffff;
   min-width: 180px;
 }
 
 .nav-links input::placeholder {
-  color: rgba(255, 255, 255, 0.75);
+  color: #ffffff;
 }
 
 .nav-links > a:hover {
@@ -141,7 +144,7 @@ body {
 }
 
 .resources-panel {
-  background-color: #fdf6ec;
+  background-color: #fdbf93;
   min-height: calc(100vh - 4.5rem - 2vw - 2rem);
   border: 0;
   border-radius: 0;
@@ -150,7 +153,7 @@ body {
 }
 
 .resources-shell {
-  background-color: #fdf6ec;
+  background-color: #fdbf93;
   margin: 0;
   border: 0;
   border-radius: 0;
@@ -203,7 +206,7 @@ body {
   text-decoration: none;
   color: #000000;
   background-color: #fffaf2;
-  border: 1px solid #d7b0a4;
+  border: 1px solid #fdbf93;
   box-shadow: 0 1px 0 rgba(117, 5, 4, 0.08);
   transition: transform 0.15s ease, background-color 0.15s ease, border-color 0.15s ease;
 }
