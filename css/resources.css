@@ -30,7 +30,7 @@ body {
   overflow-y: auto;
   display: flex;
   flex-direction: column;
-  background-color: #fdbf93;
+  background-color: #fff4de;
 }
 
 .nav-header {
@@ -144,7 +144,7 @@ body {
 }
 
 .resources-panel {
-  background-color: #fdbf93;
+  background-color: #fff4de;
   min-height: calc(100vh - 4.5rem - 2vw - 2rem);
   border: 0;
   border-radius: 0;
@@ -153,7 +153,7 @@ body {
 }
 
 .resources-shell {
-  background-color: #fdbf93;
+  background-color: #fff4de;
   margin: 0;
   border: 0;
   border-radius: 0;
@@ -206,7 +206,7 @@ body {
   text-decoration: none;
   color: #000000;
   background-color: #fffaf2;
-  border: 1px solid #fdbf93;
+  border: 10px solid #fdbf93;
   box-shadow: 0 1px 0 rgba(117, 5, 4, 0.08);
   transition: transform 0.15s ease, background-color 0.15s ease, border-color 0.15s ease;
 }
@@ -220,7 +220,7 @@ body {
 .resource-number {
   display: block;
   font-family: "Plus Jakarta Sans", sans-serif;
-  font-size: 0.72rem;
+  font-size: 1.1rem;
   letter-spacing: 0.18em;
   color: #750504;
   opacity: 1;

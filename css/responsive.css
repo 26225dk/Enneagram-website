@@ -193,3 +193,53 @@
     font-size: 1.25rem;
   }
 }
+
+@media (min-width: 1001px) {
+  body .topnav {
+    padding-left: 1%;
+    padding-right: 1%;
+    gap: 0.75rem;
+  }
+
+  body .enneagram-logo {
+    margin-left: -0.25rem;
+  }
+
+  body .enneagram-text {
+    margin-left: 0.5rem;
+  }
+}
+
+@media (min-width: 921px) {
+  body [class^="info-layout-sp"],
+  body [class^="info-layout-so"],
+  body [class^="info-layout-sx"] {
+    grid-template-columns: minmax(0, 1.4fr) minmax(280px, 0.8fr);
+    align-items: stretch;
+  }
+
+  body [class^="description-box-sp"],
+  body [class^="description-box-so"],
+  body [class^="description-box-sx"] {
+    min-height: 420px;
+  }
+
+  body [class^="description-box-sp"] img,
+  body [class^="description-box-so"] img,
+  body [class^="description-box-sx"] img {
+    width: 100%;
+    max-width: 100%;
+    max-height: min(74vh, 680px);
+  }
+
+  body h1[class^="sp"] .type-tag {
+    flex-basis: 100%;
+    width: 100%;
+  }
+
+  body [class^="info-layout-sp"] > .example-box,
+  body [class^="info-layout-so"] > .example-box,
+  body [class^="info-layout-sx"] > .example-box {
+    height: 100%;
+  }
+}
