@@ -34,6 +34,11 @@
     font-size: 0.85rem;
   }
 
+  .nav-links a.clicked {
+    background-color: #ffffff !important;
+    color: #000000 !important;
+  }
+
   .nav-links input,
   .topnav input[type="text"] {
     flex: 1 1 100%;
@@ -86,6 +91,10 @@
   }
 }
 
+.nav-links a.clicked {
+  background-color: #ffffff !important;
+  color: #000000 !important;
+}
 @media (max-width: 640px) {
   body {
     border-width: 0.5rem;
@@ -178,6 +187,11 @@
   .quiz-result-copy {
     font-size: 0.9rem;
     line-height: 1.6;
+  }
+
+  .quiz-result-warning {
+    font-size: 0.8rem;
+    line-height: 1.5;
   }
 
   .quiz-result-desc {

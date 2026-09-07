@@ -1,5 +1,11 @@
 // This makes the nav links look active when you click them.
 const navLinks = document.querySelectorAll('.topnav .nav-links a');
+const currentPage = window.location.pathname.split('/').pop() || 'index.html';
+const currentNavLink = Array.from(navLinks).find(link => link.getAttribute('href') === currentPage);
+if (currentNavLink) {
+  currentNavLink.classList.add('active');
+}
+
 navLinks.forEach(link => {
     link.addEventListener('click', event => {
         navLinks.forEach(item => item.classList.remove('active'));
@@ -414,6 +420,9 @@ function renderResult() {
 
     const result = getResultSummary();
     const profile = result.profile || {};
+    const sexualWarning = result.instinctKey === "sx" ? `
+          <p class="quiz-result-warning">Don't let the title fool you! The "sexual" instinct has nothing to do with literal sex. Rather, it's another term for "chemistry energy" and it's used to describe the intensity of one-on-one connections with the people you love, like a magnetic pull that draws people in.</p>
+        ` : "";
     const strengthsList = (profile.strengths || []).map(item => `<li>${item}</li>`).join("");
     const weaknessesList = (profile.weaknesses || []).map(item => `<li>${item}</li>`).join("");
     const careersList = (profile.careers || []).map(item => `<li>${item}</li>`).join("");
@@ -424,6 +433,7 @@ function renderResult() {
             <header class="quiz-result-header">
                 <p class="quiz-result-subtitle">Your result</p>
                 <h2>${result.resultTitle}</h2>
+                ${sexualWarning}
             </header>
             <div class="quiz-result-body">
                 <div class="quiz-result-image">
