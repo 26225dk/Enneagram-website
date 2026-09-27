@@ -1,4 +1,5 @@
 // This makes the nav links look active when you click them.
+// I compare the current page URL with each navigation link. The matching link receives the "active" class so the user can see which page they are currently seeing.
 const navLinks = document.querySelectorAll('.topnav .nav-links a');
 const currentPage = window.location.pathname.split('/').pop() || 'index.html';
 const currentNavLink = Array.from(navLinks).find(link => link.getAttribute('href') === currentPage);
@@ -101,7 +102,7 @@ const searchEntries = [
   { label: 'Sexual Nine', url: 'SX9.html' }
 ];
 
-// This cleans the text so the search is easier to match.
+// I convert the search text to lowercase and remove spaces and underscores. This allows searches such as "Self preservation One" to still match "Self-preservation One".
 function normalizeSearchText(value) {
   return value.toLowerCase().replace(/\s+/g, '').replace(/_/g, '');
 }
@@ -111,6 +112,7 @@ function showSearchResults(input, query) {
   const wrapper = input.parentElement;
   if (!wrapper) return;
 
+// I filter the list of pages and keep only entries whose name or URL contains the user's search text.
   let results = searchEntries.filter(entry => {
     const normalizedLabel = normalizeSearchText(entry.label);
     const normalizedQuery = normalizeSearchText(query);
@@ -120,6 +122,7 @@ function showSearchResults(input, query) {
   let dropdown = wrapper.querySelector('.search-dropdown');
   if (!dropdown) {
     dropdown = document.createElement('div');
+// I create the search results dropdown with javascript so matching pages can appear without needing a separate dropdown for every page.
     dropdown.className = 'search-dropdown';
     dropdown.style.position = 'absolute';
     dropdown.style.top = 'calc(100% + 0.25rem)';
@@ -371,6 +374,7 @@ function getResultSummary() {
   let bestSubtypeKey = null;
   let bestSubtypeScore = -Infinity;
 
+// I compare every subtype's score and keep track of the highest one. If two subtypes have the same score, the second condition makes the result consistent instead of choosing randomly.
   Object.entries(subtypeScores).forEach(([subtypeKey, score]) => {
     if (score > bestSubtypeScore || (score === bestSubtypeScore && (bestSubtypeKey === null || subtypeKey < bestSubtypeKey))) {
       bestSubtypeScore = score;
@@ -428,6 +432,7 @@ function renderResult() {
     const careersList = (profile.careers || []).map(item => `<li>${item}</li>`).join("");
 
     resultContainer.hidden = false;
+// I use the calculated result to build the result card. This means the same HTML structure can display different types, strengths, weaknesses and careers depending on the user's score.
     resultContainer.innerHTML = `
         <div class="quiz-result-panel" style="--accent:${result.accentColor}">
             <header class="quiz-result-header">
@@ -468,7 +473,7 @@ function showQuestion() {
 // This updates the progress bar based on how many answers are done.
 function updateProgress() {
     const totalQuestions = questions.length;
-    // Base progress directly on how many questions have been answered out of total
+// I calculate progress as the number of answered questions divided by the total number of questions, then convert it to a percentage. This keeps the progress bar accurate as the user moves through the quiz.
     const progress = (history.length / totalQuestions) * 100;
     document.querySelector(".progress-bar-fill").style.width = progress + "%";
     document.querySelector(".progress-percent").textContent = Math.round(progress) + "%";
@@ -483,10 +488,12 @@ function normalizeAnswerValue(value) {
 // This adds the selected score to the matching type and instinct totals.
 function applyQuestionScore(q, value) {
     const normalizedValue = normalizeAnswerValue(value);
+// I divide the answer's score between all the relevant types and instincts. This means a question associated with multiple types does not give each type the full score. The same method is used to calculate subtype scores.
     const typeShare = q.tags.enneagram.length ? normalizedValue / q.tags.enneagram.length : 0;
     const instinctShare = q.tags.instinct.length ? normalizedValue / q.tags.instinct.length : 0;
     const subtypeShare = q.tags.enneagram.length && q.tags.instinct.length ? normalizedValue / (q.tags.enneagram.length * q.tags.instinct.length) : 0;
 
+// I add the calculated share to each enneagram type associated with the question. This builds the user's total score as they answer more questions.
     q.tags.enneagram.forEach(type => {
         typeScores[type] += typeShare;
     });
@@ -551,6 +558,8 @@ document.querySelectorAll(".answer-btn").forEach(btn => {
 document.querySelector(".back-btn").addEventListener("click", () => {
     if (current === 0 || history.length === 0) return;
 
+// I retrieve and remove the user's previous answer from the history. The question index is restored so the user can answer that question again.
+// I subtract the previous answer's score from every score it affected. This prevents the previous answer from still influencing the final result after the user has undone it. 
     const last = history.pop();
     current = last.questionIndex; 
 
